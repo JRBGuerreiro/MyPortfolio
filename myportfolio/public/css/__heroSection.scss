@@ -1,0 +1,88 @@
+$primaryTextColor: #ffffff;
+
+.heroSection{
+    width: 100%;
+    height: 100vh;
+}
+
+.backgroundImg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/porto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.8;
+}
+
+.initialGreeting{
+    color: $primaryTextColor;
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
+    font-weight: lighter;
+    margin-bottom: 10px; 
+}
+
+.initialGreetingName{
+    color: $primaryTextColor;
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    margin-top: 15px;
+    font-weight: lighter;
+}
+
+.initialButton {
+    border-radius: 4px;
+    border: 2px solid  #ffffff;
+    background-color: transparent;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    padding: 20px 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.initialButton::after {
+    -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    background-color: #b3a8a8;
+}
+
+.initialButton:hover::after,
+.initialButton:active::after {
+    height: 100%;
+    display: block;
+}
+
+.initialButton:hover {
+    span{
+        background: url('../images/arrow.svg') center center no-repeat;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        left: calc(50% - 12px);
+        animation: rotation 0.5s forwards;
+        animation-delay: 0.4s;
+        z-index: 10;
+    }
+}
+
+@keyframes rotation {
+    100%{
+        transform: rotate(90deg);
+    }
+
+}
+
