@@ -1,7 +1,7 @@
 footer {
   padding: 60px 0 50px 0;
   background-color: #1b242f;
-  width: 100%;
+  width: 100vw;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -80,32 +80,50 @@ footer {
   margin-left: 5px;
 }
 
-.heroSection {
-  width: 100%;
-  height: 100vh;
+:root {
+  --greetingOpacity: 1;
+  --greetingScale: 1;
 }
 
-.backgroundImg {
+.heroSection {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  text-align: center;
+}
+
+.heroSection .heroVideo, .heroSection .heroHeaderWrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.heroSection .heroVideo {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.heroSection .heroHeaderWrapper {
+  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-  height: 100vh;
-  background-image: url(../images/porto.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  opacity: 0.8;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  opacity: 1;
+  opacity: var(--greetingOpacity);
+  -webkit-transform: scale(var(--greetingScale));
+          transform: scale(var(--greetingScale));
 }
 
 .initialGreeting {
@@ -145,7 +163,7 @@ footer {
   top: 0;
   height: 0;
   width: 100%;
-  background-color: #b3a8a8;
+  background-color: #12969b;
 }
 
 .initialButton:hover::after,
@@ -160,10 +178,10 @@ footer {
   height: 24px;
   position: absolute;
   left: calc(50% - 12px);
-  -webkit-animation: rotation 0.5s forwards;
-          animation: rotation 0.5s forwards;
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
+  -webkit-animation: rotation 0.4s forwards;
+          animation: rotation 0.4s forwards;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
   z-index: 10;
 }
 
@@ -181,8 +199,118 @@ footer {
   }
 }
 
-body {
+.cardWrapper {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-perspective: 900px;
+          perspective: 900px;
+  background-color: #f4f4f4;
+  margin-top: 100vh;
+}
+
+.card {
+  border-radius: 13px;
+  position: relative;
+  width: 300px;
+  height: 500px;
+  margin: 20px;
+  background-color: white;
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  background-color: #283647;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.cardFront, .cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.cardBack {
+  background-color: #283647;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  border-radius: 13px;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  border-radius: 13px;
+}
+
+.cardTitleWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100px;
+}
+
+.cardTitle {
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: lighter;
+  width: 100%;
+  margin: 0;
+}
+
+html, body {
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
+}
+
+.projects {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  color: #283647;
 }
 /*# sourceMappingURL=style.css.map */
