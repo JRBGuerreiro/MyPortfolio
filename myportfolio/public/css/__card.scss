@@ -1,12 +1,38 @@
-.cardWrapper{
+.projectsWrapper{
     width: 100vw;
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     perspective: 900px;
-    background-color: #f4f4f4;
-    margin-top: 100vh;
+    background-color: #283647;
+    margin-top: 40px;;
+}
+
+.projects{
+    position: relative;
+    background-color: #283647;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+        color: #283647;
+        font-size: 45px;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 200;
+        margin-bottom: 10px;
+    }
+}
+
+.projectsTitleWrapper{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    height: 120px;
+    border-radius: 0 0 100px 100px;
+    background-color: #ffffff;
 }
 
 .card{

@@ -163,7 +163,7 @@ footer {
   top: 0;
   height: 0;
   width: 100%;
-  background-color: #12969b;
+  background-color: #283647;
 }
 
 .initialButton:hover::after,
@@ -199,7 +199,7 @@ footer {
   }
 }
 
-.cardWrapper {
+.projectsWrapper {
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -215,8 +215,47 @@ footer {
       flex-wrap: wrap;
   -webkit-perspective: 900px;
           perspective: 900px;
-  background-color: #f4f4f4;
-  margin-top: 100vh;
+  background-color: #283647;
+  margin-top: 40px;
+}
+
+.projects {
+  position: relative;
+  background-color: #283647;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.projects h1 {
+  color: #283647;
+  font-size: 45px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+
+.projectsTitleWrapper {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 120px;
+  border-radius: 0 0 100px 100px;
+  background-color: #ffffff;
 }
 
 .card {
@@ -302,15 +341,199 @@ footer {
   margin: 0;
 }
 
+:root {
+  --percentage: 0;
+}
+
+.aboutMeSection {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  margin-top: 100vh;
+  background-color: #ffffff;
+}
+
+.aboutMeFlexWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 40px;
+}
+
+.aboutMeTitleWrapper {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 120px;
+  border-radius: 0 0 100px 100px;
+  background-color: #283647;
+}
+
+.aboutMeTitle {
+  color: #ffffff;
+  font-size: 45px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+
+.aboutMeImg {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: relative;
+  -webkit-box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+          box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+  background: url("../images/me.png") center center no-repeat;
+}
+
+.aboutMeFlex50R, .aboutMeFlex50L {
+  width: 70%;
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.aboutMeFlex50R h2, .aboutMeFlex50R h4, .aboutMeFlex50L h2, .aboutMeFlex50L h4 {
+  color: #283647;
+  font-family: 'Raleway', sans-serif;
+}
+
+.aboutMeFlex50R h2, .aboutMeFlex50L h2 {
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+.aboutMeFlex50R h4, .aboutMeFlex50L h4 {
+  line-height: 27px;
+  text-align: center;
+  font-weight: lighter;
+  margin-top: 0;
+}
+
+.aboutMeFlex50L {
+  width: 30%;
+  padding-left: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.aboutMeFlex50R {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.aboutMeIconWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 33.3%;
+}
+
+.aboutMeIconWrapper h1 {
+  color: #283647;
+  font-family: 'Raleway', sans-serif;
+}
+
+.aboutMeIcon {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  width: 120px;
+  height: 120px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 10px 20px 10px 20px;
+  position: relative;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 2px 8px #aaa, inset 0px 2px 3px #fff;
+          box-shadow: 0px 2px 8px #aaa, inset 0px 2px 3px #fff;
+  position: relative;
+  cursor: pointer;
+}
+
+.aboutMePercentage {
+  background-color: #283647;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.aboutMeIcon:hover {
+  border-radius: 5%;
+}
+
+.aboutMeIcon:hover > .aboutMePercentage {
+  opacity: 0.8;
+}
+
+.aboutMeIcon:hover > .aboutMePercentage h2 {
+  opacity: 1;
+  color: #ffffff;
+}
+
+@media (max-width: 1200px) {
+  .aboutMeIconWrapper {
+    width: 50%;
+  }
+}
+
 html, body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
 }
 
-.projects {
-  font-family: 'Raleway', sans-serif;
-  font-weight: bold;
-  color: #283647;
+.contentWrapper {
+  margin-top: 100vh;
 }
 /*# sourceMappingURL=style.css.map */
