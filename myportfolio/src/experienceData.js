@@ -1,31 +1,31 @@
 const experienceData = [
     {
         id: "1",
-        imageUrl: "../images/bet365.jpg",
+        imageUrl: "../images/apple.svg",
         description: "Bet365 Native iOS app",
         title: "Bet365 Native iOS app"
     },
     {
         id: "2",
-        imageUrl: "../images/bet365office.jpg",
+        imageUrl: "../images/web.svg",
         description: "../images/bet365office.png",
         title: "Some title for now"
     },
     {
         id: "3",
-        imageUrl: "Clean fish tank",
+        imageUrl: "../images/car.svg",
         description: "some text for now",
         title: "Some title for now"
     },
     {
         id: "4",
-        imageUrl: "Mow lawn",
+        imageUrl: "../images/weather.svg",
         description: "some text for now",
         title: "Some title for now"
     },
     {
         id: "5",
-        imageUrl: "Talk to humans",
+        imageUrl: "../images/cart.svg",
         description: "some text for now",
         title: "Some title for now"
     },

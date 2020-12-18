@@ -40,12 +40,10 @@ const AboutMe = () => {
         const topPos = element => element.getBoundingClientRect().top
 
         const divPos1 = topPos(ref.current)
-            // div2Pos = topPos(refTwo.current)
 
         const scrollHandler = () => {
             const scrolPos = window.scrollY + window.innerHeight
             if(divPos1 < scrolPos) {
-                debugger;
                 doShow(state => ({...state, itemOne: true}))
                 doShow(state => ({...state, itemTwo: true}))
             } 
