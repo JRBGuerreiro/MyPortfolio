@@ -96,7 +96,6 @@ const AboutMe = () => {
         window.addEventListener("scroll", scrollHandler)
 
         return () => {
-            console.log("i'm returning")
             window.removeEventListener("scroll", scrollHandler)
         };
     }, [])

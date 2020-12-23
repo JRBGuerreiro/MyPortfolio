@@ -837,6 +837,64 @@ footer {
           transition-duration: 0.5s;
 }
 
+.formWrapper {
+  width: 100vw;
+  background-color: white;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+input, textarea {
+  width: 60%;
+  margin: 2px 0 2px 0;
+  padding: 12px 18px;
+  border: none;
+  background-color: #3b4e6b;
+  font-family: 'Raleway', sans-serif;
+}
+
+textarea {
+  padding: 12px 18px 60px 18px;
+}
+
+::-webkit-input-placeholder {
+  color: #ffffff;
+  font-weight: lighter;
+}
+
+:-ms-input-placeholder {
+  color: #ffffff;
+  font-weight: lighter;
+}
+
+::-ms-input-placeholder {
+  color: #ffffff;
+  font-weight: lighter;
+}
+
+::placeholder {
+  color: #ffffff;
+  font-weight: lighter;
+}
+
+.form-icon {
+  width: 50px;
+  height: 50px;
+  color: #3b4e6b;
+}
+
 html, body {
   padding: 0;
   margin: 0;

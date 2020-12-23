@@ -4,6 +4,7 @@ import HeroSection from './Components/HeroSection'
 import AboutMe from './Components/AboutMe';
 import Projects from './Components/Projects';
 import Modal from './Components/Modal';
+import Form from './Components/Form'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
 			<AboutMe/>
 			<Projects setData={handleData} setShow = {setShow}/>
 			<Modal data={data} show={show} setShow={setShow} />
+			<Form/>
 			<Footer/>
 		</div>
     )
