@@ -26,28 +26,31 @@ export default function Modal(props) {
     
     return (
         <Animation className="modalWrapper" animate={props.show}>  
+        {props.data ? 
             <div className="modal" id="modal">
-                <div className="modalHeaderWrapper">
-                <IoIosCloseCircleOutline className="modalCloseCross" onClick={closeModal}/>
-                    {props.data ? <img src={data[0].logo} alt="logo" /> : null }
-                    {props.data ? <h2>{data[0].title}</h2> : null}
-                </div>
-                <div className="modalRightFlex">
-                    {props.data ? <Slider 
-                        images={[data[0].image1Carrousel, data[0].image2Carrousel, data[0].image3Carrousel]}
-                    /> : null}
-                    <div className="modalRightDescription">
-                        <h1>Description</h1>
-                        {props.data ? <p>{data[0].description}</p> : null}
-                        <h1>Technologies</h1>
-                        {props.data ? <div className="modalTechnologiesWrapper">
-                            {data[0].technologiesUsed.map((image) => {
-                                return <img src={image}/>
-                            })}
-                        </div> : null}
-                    </div>
+            <div className="modalHeaderWrapper">
+            <IoIosCloseCircleOutline className="modalCloseCross" onClick={closeModal}/>
+                <img src={data[0].logo} alt="logo" /> 
+                <h2>{data[0].title}</h2> 
+            </div>
+            <div className="modalRightFlex">
+                <Slider 
+                    images={[data[0].image1Carrousel, data[0].image2Carrousel, data[0].image3Carrousel]}
+                /> 
+                <div className="modalRightDescription">
+                    <h1>Description</h1>
+                    <p>{data[0].description}</p>
+                    <h1>Technologies</h1>
+                    <div className="modalTechnologiesWrapper">
+                        {data[0].technologiesUsed.map((image) => {
+                            return <img src={image}/>
+                        })}
+                    </div> 
                 </div>
             </div>
+        </div>
+        : null}
+            
         </Animation>
     )
 }   
