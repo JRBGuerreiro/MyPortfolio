@@ -41,7 +41,7 @@ $primaryTextColor: #ffffff;
 .initialGreeting{
     color: $primaryTextColor;
     font-family: 'Raleway', sans-serif;
-    font-size: 50px;
+    font-size: 32pt;
     font-weight: lighter;
     margin-bottom: 10px; 
 }
@@ -50,7 +50,7 @@ $primaryTextColor: #ffffff;
 .initialGreetingName{
     color: $primaryTextColor;
     font-family: 'Raleway', sans-serif;
-    font-size: 40px;
+    font-size: 28pt;
     margin-top: 15px;
     font-weight: lighter;
 }
@@ -104,5 +104,37 @@ $primaryTextColor: #ffffff;
         transform: rotate(90deg);
     }
 
+}
+
+//small devices
+@media (max-width: 768px) {
+    .initialGreeting{
+        font-size: 28pt;
+        margin: 0 10px 10px 10px;
+    }
+
+    .initialGreetingName {
+        font-size: 22pt;
+        margin-bottom: 30px;
+    }
+
+    .initialButton {
+        padding: 15px 15px;
+        font-size: 14pt;
+    }
+
+    .initialButton:hover {
+        span{
+            background: url('../images/arrow.svg') center center no-repeat;
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            left: calc(50% - 12px);
+            animation: rotation 0.4s forwards;
+            animation-delay: 0.3s;
+            z-index: 10;
+            background-size: 19px 19px;
+        }
+    }
 }
 

@@ -2,6 +2,7 @@
     --percentage: 0;
 }
 
+
 .aboutMeSection{
     width: 100vw;
     display: flex;
@@ -9,7 +10,21 @@
     justify-content: center;
     position: relative;
     margin-top: 100vh;
-    background-color: #ffffff;
+    background-color: #fcfcfc;
+}
+.me {
+    display: flex;
+    width: 100%;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.me1, .me2, .me3, .me4 {
+    height: 80px;
+    width: 80px;
+    background-color: black;
+    margin: 0 80px 0 80px;
+    border-radius: 50%;
 }
 
 .aboutMeFlexWrapper{
@@ -41,7 +56,7 @@
     height: 300px;
     border-radius: 50%;
     position: relative;
-    box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+    box-shadow: 0px 0px 4px #aaa, inset 0px 0px 3px #fff;
     background: url('../images/me.png') center center no-repeat;
 }
 
@@ -52,7 +67,7 @@
     justify-content: center;
 
     h2, h4 {
-        color: #283647;
+        color: #414141;
         font-family: 'Raleway', sans-serif;
     }
 
@@ -62,8 +77,8 @@
     }
 
     h4 {
-        line-height: 27px;
-        text-align: center;
+        line-height: 20pt;
+        text-align: justify;
         font-weight: lighter;
         margin-top: 0;
     }
@@ -78,6 +93,7 @@
 
 .aboutMeFlex50R {
     flex-wrap: wrap;
+    margin-top: 70px;
 }
 
 /////// ICONS STYLING RHS////////
@@ -88,25 +104,27 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 33.3%;
-
+    width: 27%;
     h1{
-        color: #283647;
+        color: #ffffff;
+        padding: 7px 15px 7px 15px;
         font-family: 'Raleway', sans-serif;
+        font-weight: lighter;
+        font-size: 14pt;
+        background-color: #283647;
+        border-radius: 5px;
     }
 }
 
 .aboutMeIcon{
-    transition: all 1s;
-    width: 120px;
-    height: 120px;
+    transition: ease-out 0.8s;
+    width: 70px;
+    height: 70px;
     background-repeat: no-repeat;
     background-position: center center;
     margin: 10px 20px 10px 20px;
     position: relative;
     text-align: center;
-    border-radius: 50%;
-    box-shadow: 0px 2px 8px #aaa, inset 0px 2px 3px #fff;
     position: relative;
     cursor: pointer;
 }
@@ -122,10 +140,6 @@
     align-items: center;
 }
 
-.aboutMeIcon:hover{
-    border-radius: 5%;
-}
-
 .aboutMeIcon:hover > .aboutMePercentage {
     opacity: 0.8;
 
@@ -135,10 +149,67 @@
     }
 }
 
+@media (max-width: 960px) {
+    .aboutMeFlexWrapper {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .aboutMeFlex50L{
+        h2{
+            font-size: 26pt ;
+        }
 
-@media (max-width: 1200px) {
+        h4{
+            font-size: 14pt;
+        }
+    }
+
+    .aboutMeFlex50R {
+        margin-top: 20px;
+        width: 90%;
+    }
+
     .aboutMeIconWrapper{
-        width: 50%;
+        width: 33%;
+    }
+}
+
+
+//small devices
+@media (max-width: 767px) {
+    .aboutMeFlexWrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .aboutMeFlex50L {
+        width: 90%;
+        padding-left: 0px;
+        h2{
+            margin: 25px 10px 10px 10px;
+        }
+
+        h4{
+            line-height: 21pt;
+            margin: 20px 10px 0 10px;
+        }
+    }
+
+    .aboutMeFlex50R {
+        width: 100%;
+        margin: 35px 10px 0 10px;
+        .aboutMeIconWrapper {
+            width: 33%;
+            h1{
+                font-size: 15pt ;
+                padding: 5px 15px 5px 15px;
+            }
+        }
+
+        .aboutMeIcon {
+            width: 70px;
+            height: 70px;
+        }
     }
 }

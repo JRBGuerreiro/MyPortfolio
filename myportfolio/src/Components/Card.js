@@ -2,7 +2,7 @@ import React from 'react'
 
 function Card(props) {
     return(
-            <div className="card">
+            <div className="card" onClick={() => props.showModal(props.card)}>
                 <div className="card-inner">
                     <div style={{backgroundImage: `url(` + props.card.imageUrl + `)`}} className="cardImage"/>
                 </div>

@@ -2,11 +2,21 @@ import React from 'react'
 import Card from './Card'
 import experienceData from '../experienceData'
 
-function Projects() {
+function Projects(props) {
+
+    function handleShow(cardData) {
+        handleData(cardData)
+        props.setShow(true)
+    }
+
+    const handleData = (data) => props.setData([data])
+
     const cards = experienceData.map(content =>
         <Card
             key = {content.id}
             card = {content}
+            showModal = {handleShow}
+            modalData = {handleData}
         />
     )
 

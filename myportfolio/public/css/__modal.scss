@@ -1,0 +1,87 @@
+  .modal {
+    width: 1000px;
+    height: 650px;
+    position: fixed;
+    background: white;
+    box-shadow: 
+      -2rem 2rem 2rem rgba(black, 0.2);
+    visibility: visible;
+    display: flex;
+    border-bottom-right-radius: 100px;
+  }
+
+  .modalHeaderWrapper {
+      width: 40%;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      background-color: #365984;
+      flex-direction: column;
+
+      img{
+        width: 200px;
+        height: 200px;
+      }
+
+      h2{
+          font-family: 'Raleway', sans-serif;
+          color: #ffffff;
+          font-weight: 500;
+          text-align: center;
+      }
+  }
+
+  .modalCloseCross {
+    align-self: flex-start;
+    position: absolute;
+    top: 3px;
+    height: 40px;
+    width: 40px;
+    left: 3px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  .modalRightFlex{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+  }
+
+  .modalRightDescription{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    p{
+      font-family: 'Raleway', sans-serif;
+      padding: 0 20px 0 20px;
+      color: #414141;
+      text-align: justify;
+      line-height: 20pt;
+    }
+
+    h1{
+      font-family: 'Raleway', sans-serif;
+      text-align: center;
+      color: #ffffff;
+      font-size: 19pt;
+      background-color: #365984;
+      margin: 0;
+      padding: 10px 0 10px 0;
+      font-weight: 500;
+    }
+  }
+
+  .modalTechnologiesWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    img{
+      height: 70px;
+      width: 70px;
+      margin: 20px;
+    }
+  }
+  

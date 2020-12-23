@@ -4,7 +4,7 @@ import iconsArray from "../iconsArray"
 import styled from "styled-components";
 
 ///Styling components for animations
-    const Div = styled.div `
+    const DivTitleWrapper = styled.div `
         transform: translateX(${({animate}) => (animate ? "0" : "-100vw")});
         transition: transform 1s;
         width: 100vw;
@@ -15,31 +15,69 @@ import styled from "styled-components";
         background-color: #283647;
     `;
 
+    const DivFlex50RWrapper = styled.div `
+        transform: translateX(${({animateSlideInRight}) => (animateSlideInRight ? "0" : "100vw")});
+        transition: transform 1s;
+        transition-delay: 0.1s;
+    `;
+
+    const DivFlex50LWrapper = styled.div `
+        transform: translateX(${({animateSlideInLeft}) => (animateSlideInLeft ? "0" : "-100vw")});
+        transition: transform 1s;
+        transition-delay: 0.1s;
+        width: 30%;
+        margin-left: 70px;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+
+        @media (max-width: 960px) {
+            width: 80%;
+            margin-left: 0px;
+        }
+
+        @media (max-width: 768px) {
+            width: 90%;
+        }
+    `;
+
     const H1 = styled.h1 `
         opacity: ${({animateOpacity}) => (animateOpacity ? "1" : "0")};
         transition: opacity 1.2s;
         transition-delay: 0.6s;
         color: #ffffff;
-        font-size: 45px;
+        font-size: 32pt;
         font-family: 'Raleway', sans-serif;
         font-weight: 200;
         margin-bottom: 10px;
+
+        @media (max-width: 768px) {
+            font-size: 30pt;
+        }
     `
 
 const AboutMe = () => {
 
     const [show, doShow] = useState({
         itemOne: false,
-        itemTwo: false
+        itemTwo: false,
+        itemThree: false,
+        itemFour: false
     }) 
 
     const ref = useRef(null),
-        refTwo = useRef(null) 
+        refTwo = useRef(null),
+        refThree = useRef(null),
+        refFour = useRef(null)
 
     useLayoutEffect(() => {
         const topPos = element => element.getBoundingClientRect().top
 
-        const divPos1 = topPos(ref.current)
+        const divPos1 = topPos(ref.current),
+              flexDiv50L = topPos(refThree.current),
+              flexDiv50R = topPos(refFour.current)
 
         const scrollHandler = () => {
             const scrolPos = window.scrollY + window.innerHeight
@@ -47,6 +85,12 @@ const AboutMe = () => {
                 doShow(state => ({...state, itemOne: true}))
                 doShow(state => ({...state, itemTwo: true}))
             } 
+            if (flexDiv50L < scrolPos) {
+                doShow(state => ({...state, itemThree:true}))
+            }
+            if (flexDiv50R < scrolPos) {
+                doShow(state => ({...state, itemFour:true}))
+            }
 
         }
         window.addEventListener("scroll", scrollHandler)
@@ -67,25 +111,31 @@ const AboutMe = () => {
 
     return(
         <section className="aboutMeSection">
-            <Div animate={show.itemOne} ref={ref}>
+            <DivTitleWrapper animate={show.itemOne} ref={ref}>
                 <H1 animateOpacity={show.itemTwo} ref={refTwo}>About Me</H1>
-            </Div>
+            </DivTitleWrapper>
+            {/* <div className="me">
+                <div className="me1"></div>
+                <div className="me2"></div>
+                <div className="me3"></div>
+                <div className="me4"></div>
+            </div> */}
             <div className="aboutMeFlexWrapper">
-                <div className="aboutMeFlex50L">
+                <DivFlex50LWrapper animateSlideInLeft={show.itemThree} ref={refThree} className="aboutMeFlex50L">
                     <div className="aboutMeImg"/>
                     <h2>Who am I?</h2>
                     <h4>Hi, my name is Jorge and I'm a FrontEnd Software Developer
-                        <br/>
+                       
                         I currently work for Bet365 in Stoke, United Kingdom
-                        <br/>
+                        
                         I am passionated about creating seamless user experience
-                        <br/>
-                        I love creating dynamic animations and CSS effects to engage users
+                       
+                        I love creating dynamic animations and CSS effects to engage users.
                     </h4>
-                </div>
-                <div className="aboutMeFlex50R">
+                </DivFlex50LWrapper>
+                <DivFlex50RWrapper animateSlideInRight={show.itemFour} ref={refFour} className="aboutMeFlex50R">
                     {icons}
-                </div>
+                </DivFlex50RWrapper>
             </div>
         </section>
     )

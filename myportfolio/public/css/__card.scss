@@ -1,17 +1,17 @@
 .projectsWrapper{
-    width: 100vw;
+    width: 70vw;
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    perspective: 900px;
-    background-color: #283647;
-    margin-top: 40px;;
+    background-color: #3b4e6b;
+    margin-top: 40px;
+    margin-bottom: 60px;
 }
 
 .projects{
     position: relative;
-    background-color: #283647;
+    background-color: #3b4e6b;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,16 +32,15 @@
     justify-content: center;
     height: 120px;
     border-radius: 0 0 100px 100px;
-    background-color: #ffffff;
+    background-color: #fcfcfc;
 }
 
 .card{
     border-radius: 13px;
     position: relative;
-    width: 300px;
+    width: 350px;
     height:300px;
     margin: 20px;
-    background-color: white;
     // shadow from css tricks
     box-shadow:  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -51,30 +50,44 @@
     0 100px 80px rgba(0, 0, 0, 0.12);
     display: flex;
     flex-direction: column;
-    perspective: 1000px;
-    background-color: #283647;
+    background-color: #152334;
     justify-content: center;
     align-items: center;
 }
 
+.card::after{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Raleway", sans-serif;
+    color: #3b4e6b;
+    font-weight: bold;
+    opacity: 0;
+    transition: linear 0.35s;
+    content: "Tap to find more";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #ffffff;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+}
 .card:hover {
     .card-inner{
-        animation: rotate3danimation 0.8s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-        animation-delay: 0s;
-    }
-}
-
-@keyframes rotate3danimation{
-    50% {
         transform: translateY(-30px) rotate(0deg) skew(0deg);
         box-shadow: 0 0 0 0 #ffffff;
     }
+    
+    .cardTitle {
+        opacity: 1;
+        animation-delay: 0.3s;
+    }
 
-    100%{
-        transform: translateY(-30px) rotate(0deg) skew(0deg);
-        box-shadow: 0 0 0 0 #ffffff;
+    &::after {
+        height: 15%;
+        opacity: 0.8;
     }
 }
 
@@ -86,7 +99,7 @@
     transform: rotate( -33deg) skew(20deg);
     box-shadow: -2px 3px 3px 4px #394c63;
     transform-style: preserve-3d;
-    transition: linear 0.3s;
+    transition: linear 0.35s;
     backface-visibility: hidden;
 }
 
@@ -94,14 +107,16 @@
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
-    background-size: 50px 50px;
+    background-size: 55px 55px;
     background-position: center center;
     border-radius: 13px;
 }
 
 .cardTitle{
+    transition: linear 0.3s;
     opacity: 0;
     top: 30px;
+    text-align: center;
 }
 
 .cardTitleText{
@@ -109,4 +124,6 @@
     font-family: 'Raleway', sans-serif;
     color: #ffffff;
     position: relative;
+    font-weight: lighter;
+    font-size: 20px;
 }
