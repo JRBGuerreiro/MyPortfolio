@@ -12,7 +12,7 @@ import styled from "styled-components";
         justify-content: center;
         height: 120px;
         border-radius: 0 0 100px 100px;
-        background-color: #283647;
+        margin-top: 35px;
     `;
 
     const DivFlex50RWrapper = styled.div `
@@ -44,10 +44,7 @@ import styled from "styled-components";
     `;
 
     const H1 = styled.h1 `
-        opacity: ${({animateOpacity}) => (animateOpacity ? "1" : "0")};
-        transition: opacity 1.2s;
-        transition-delay: 0.6s;
-        color: #ffffff;
+        color: #283647;
         font-size: 32pt;
         font-family: 'Raleway', sans-serif;
         font-weight: 200;
@@ -55,6 +52,17 @@ import styled from "styled-components";
 
         @media (max-width: 768px) {
             font-size: 30pt;
+        }
+
+        &:after {
+            opacity: ${({opacity}) => (opacity ? "1" : "0")};
+            transition: opacity 1s;
+            transition-delay: 0.8s;
+            content: "About Me";
+            display: block;
+            color: rgba(40,54,71,.1);
+            transform: rotate3d(1, 0, 0, 114deg) scale(1, 2.5) skew(-38deg, 0deg);
+            margin: -20px 0 0 10px;
         }
     `
 
@@ -111,7 +119,7 @@ const AboutMe = () => {
     return(
         <section className="aboutMeSection">
             <DivTitleWrapper animate={show.itemOne} ref={ref}>
-                <H1 animateOpacity={show.itemTwo} ref={refTwo}>About Me</H1>
+                <H1 className="aboutMeTitle" opacity={show.itemTwo} ref={refTwo}>About Me</H1>
             </DivTitleWrapper>
             {/* <div className="me">
                 <div className="me1"></div>

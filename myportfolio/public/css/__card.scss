@@ -18,39 +18,43 @@
     justify-content: center;
 
     h1{
-        color: #283647;
-        font-size: 45px;
+        color: #3b4e6b;
+        font-size: 32pt;
         font-family: 'Raleway', sans-serif;
         font-weight: 200;
         margin-bottom: 10px;
+        position: absolute;
+        top: -135px;
     }
 }
 
 .projectsTitleWrapper{
-    width: 100vw;
+    position: relative;
     display: flex;
     justify-content: center;
-    height: 120px;
     border-radius: 0 0 100px 100px;
-    background-color: #fcfcfc;
+    background-color: #3b4e6b;
+    border-bottom: 100px solid transparent;
+    border-left: 100vh solid transparent;
+    border-top: 180px solid #fcfcfc;
+    border-right: 100vh solid transparent;
 }
 
 .card{
-    border-radius: 13px;
     position: relative;
     width: 350px;
     height:300px;
     margin: 20px;
-    // shadow from css tricks
-    box-shadow:  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    display: flex;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048),
     0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072),
     0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
-    display: flex;
     flex-direction: column;
-    background-color: #152334;
+    background-color: #3b4e6b;
     justify-content: center;
     align-items: center;
 }
@@ -96,8 +100,8 @@
     width: 80px;
     height: 80px;
     text-align: center;
-    transform: rotate( -33deg) skew(20deg);
-    box-shadow: -2px 3px 3px 4px #394c63;
+    transform: rotate(-33deg) skew(20deg);
+    box-shadow: -1px 1px 2px 2px #ffffff;
     transform-style: preserve-3d;
     transition: linear 0.35s;
     backface-visibility: hidden;

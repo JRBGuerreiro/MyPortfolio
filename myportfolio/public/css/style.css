@@ -265,42 +265,46 @@ footer {
 }
 
 .projects h1 {
-  color: #283647;
-  font-size: 45px;
+  color: #3b4e6b;
+  font-size: 32pt;
   font-family: 'Raleway', sans-serif;
   font-weight: 200;
   margin-bottom: 10px;
+  position: absolute;
+  top: -135px;
 }
 
 .projectsTitleWrapper {
-  width: 100vw;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 120px;
   border-radius: 0 0 100px 100px;
-  background-color: #fcfcfc;
+  background-color: #3b4e6b;
+  border-bottom: 100px solid transparent;
+  border-left: 100vh solid transparent;
+  border-top: 180px solid #fcfcfc;
+  border-right: 100vh solid transparent;
 }
 
 .card {
-  border-radius: 13px;
   position: relative;
   width: 350px;
   height: 300px;
   margin: 20px;
-  -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
-          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #152334;
+  background-color: #3b4e6b;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -361,8 +365,8 @@ footer {
   text-align: center;
   -webkit-transform: rotate(-33deg) skew(20deg);
           transform: rotate(-33deg) skew(20deg);
-  -webkit-box-shadow: -2px 3px 3px 4px #394c63;
-          box-shadow: -2px 3px 3px 4px #394c63;
+  -webkit-box-shadow: -1px 1px 2px 2px #ffffff;
+          box-shadow: -1px 1px 2px 2px #ffffff;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   -webkit-transition: linear 0.35s;
@@ -448,7 +452,7 @@ footer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 70px;
 }
 
 .aboutMeTitleWrapper {
@@ -462,14 +466,6 @@ footer {
   height: 120px;
   border-radius: 0 0 100px 100px;
   background-color: #283647;
-}
-
-.aboutMeTitle {
-  color: #ffffff;
-  font-size: 45px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 200;
-  margin-bottom: 10px;
 }
 
 .aboutMeImg {
@@ -584,15 +580,6 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.aboutMeIcon:hover > .aboutMePercentage {
-  opacity: 0.8;
-}
-
-.aboutMeIcon:hover > .aboutMePercentage h2 {
-  opacity: 1;
-  color: #ffffff;
 }
 
 @media (max-width: 960px) {
@@ -854,6 +841,7 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: #fcfcfc;
 }
 
 input, textarea {
@@ -863,10 +851,12 @@ input, textarea {
   border: none;
   background-color: #3b4e6b;
   font-family: 'Raleway', sans-serif;
+  color: #ffffff;
 }
 
 textarea {
   padding: 12px 18px 60px 18px;
+  resize: none;
 }
 
 ::-webkit-input-placeholder {
@@ -890,9 +880,44 @@ textarea {
 }
 
 .form-icon {
+  width: 35px;
+  height: 35px;
+  color: #ffffff;
+}
+
+.iconWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 50px;
   height: 50px;
-  color: #3b4e6b;
+  background-color: #3b4e6b;
+  padding: 12px 18px;
+  margin-top: 20px;
+  border-radius: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contactTextWrapper {
+  width: calc(600px * 0.6);
+  padding: 12px 18px;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  color: #ad0068;
+  font-size: 14pt;
+  line-height: 20pt;
+  text-align: center;
 }
 
 html, body {

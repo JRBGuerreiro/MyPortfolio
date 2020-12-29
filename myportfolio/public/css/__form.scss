@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: #fcfcfc;
 }
 
 input, textarea{
@@ -15,10 +16,12 @@ input, textarea{
     border: none;
     background-color: #3b4e6b;
     font-family: 'Raleway', sans-serif; 
+    color: #ffffff;
 }
 
 textarea{
     padding: 12px 18px 60px 18px;
+    resize: none;
 }
 ::placeholder {
     color: #ffffff;
@@ -26,7 +29,33 @@ textarea{
 }
 
 .form-icon {
+    width: 35px;
+    height: 35px;
+    color: #ffffff;
+}
+
+.iconWrapper {
+    display: flex;
+    flex-direction: row;
     width: 50px;
     height: 50px;
-    color: #3b4e6b;
+    background-color: #3b4e6b;
+    padding: 12px 18px;
+    margin-top: 20px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactTextWrapper{
+    width: calc(600px * 0.6);
+    padding: 12px 18px;
+}
+
+p{
+    font-family: 'Raleway', sans-serif;
+    color: #ad0068;
+    font-size: 14pt;
+    line-height: 20pt;
+    text-align: center;
 }
