@@ -28,10 +28,7 @@ $primaryTextColor: #ffffff;
 
     .heroHeaderWrapper{
         text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        @include flexCenterColumn;
         opacity: 1;
         opacity: var(--greetingOpacity);
         transform: scale((var(--greetingScale)));

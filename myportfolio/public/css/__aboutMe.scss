@@ -5,39 +5,42 @@
 
 .aboutMeSection{
     width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include flexCenterColumn;
     position: relative;
     margin-top: 100vh;
-    background-color: #fcfcfc;
-}
-.me {
-    display: flex;
-    width: 100%;
-    margin-top: 40px;
-    justify-content: center;
+    background-color: #f5f5f5;
 }
 
-.me1, .me2, .me3, .me4 {
-    height: 80px;
-    width: 80px;
-    background-color: black;
-    margin: 0 80px 0 80px;
-    border-radius: 50%;
+.aboutMePassions{
+    width: 100vw;
+    @include flexCenterColumn;
+    position: relative;
+    background-color: #ffffff;
+    margin-top: 40px;
+}
+
+.me {
+    display: flex;
+    width: 60%;
+    margin-top: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    img{
+        object-fit: cover;
+        height: 400px;
+        width: 400px;
+    }
 }
 
 .aboutMeFlexWrapper{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    @include flexCenterRow;
     margin-bottom: 70px;
 }
 
 .aboutMeTitleWrapper{
     width: 100vw;
-    display: flex;
-    justify-content: center;
+    @include flexCenterRow;
     height: 120px;
     border-radius: 0 0 100px 100px;
     background-color: #283647;
@@ -56,8 +59,7 @@
 .aboutMeFlex50R, .aboutMeFlex50L{
     width: 70%;
     margin-top: 40px;
-    display: flex;
-    justify-content: center;
+    @include flexCenterRow;
 
     h2, h4 {
         color: #414141;
@@ -120,17 +122,6 @@
     text-align: center;
     position: relative;
     cursor: pointer;
-}
-
-.aboutMePercentage{
-    background-color: #283647;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    opacity: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 @media (max-width: 960px) {

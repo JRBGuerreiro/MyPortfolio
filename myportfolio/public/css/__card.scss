@@ -1,8 +1,6 @@
 .projectsWrapper{
     width: 70vw;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+    @include flexCenterRow;
     flex-wrap: wrap;
     background-color: #3b4e6b;
     margin-top: 40px;
@@ -12,10 +10,7 @@
 .projects{
     position: relative;
     background-color: #3b4e6b;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include flexCenterColumn;
 
     h1{
         color: #3b4e6b;
@@ -30,8 +25,7 @@
 
 .projectsTitleWrapper{
     position: relative;
-    display: flex;
-    justify-content: center;
+    @include flexCenterRow;
     border-radius: 0 0 100px 100px;
     background-color: #3b4e6b;
     border-bottom: 100px solid transparent;
@@ -41,11 +35,11 @@
 }
 
 .card{
+    @include flexCenterColumn;
     position: relative;
     width: 350px;
     height:300px;
     margin: 20px;
-    display: flex;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -53,16 +47,11 @@
     0 22.3px 17.9px rgba(0, 0, 0, 0.072),
     0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
-    flex-direction: column;
     background-color: #3b4e6b;
-    justify-content: center;
-    align-items: center;
 }
 
 .card::after{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexCenterRow;
     font-family: "Raleway", sans-serif;
     color: #3b4e6b;
     font-weight: bold;

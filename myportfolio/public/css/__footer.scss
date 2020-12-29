@@ -1,3 +1,5 @@
+@import "./_variables";
+
 footer{
     padding: 60px 0 50px 0;
     background-color: #1b242f;
@@ -8,14 +10,11 @@ footer{
 
 
 .flexIconsContainer {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+    @include flexCenterRow;
     width: 100%;
 
     .iconContainer{
-        display: flex;
-        justify-content: center;
+        @include flexCenterRow;
         height: 50px;
         width: 50px;
         background-color: #283647;
@@ -50,8 +49,7 @@ footer{
 .copyright{
     width: 100%;
     margin-top: 10px;
-    display: flex;
-    justify-content: center;
+    @include flexCenterRow;
 }
 
 .copyrightText{

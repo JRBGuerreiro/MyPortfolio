@@ -77,7 +77,6 @@ const FormData = () => {
         const scrollHandler = () => {
             const scrolPos = window.scrollY + window.innerHeight
             if(titleWrapperPos < scrolPos) {
-                debugger;
                 doShow(state => ({...state, wrapperTitle: true}))
                 doShow(state => ({...state, title: true}))
             } 

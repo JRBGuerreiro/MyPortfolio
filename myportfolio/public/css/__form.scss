@@ -2,17 +2,14 @@
     width: 100vw;
     background-color: white;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    @include flexCenterColumn;
     background-color: #fcfcfc;
 }
 
 input, textarea{
     width: 60%;
     margin: 2px 0 2px 0;
-    padding: 12px 18px;
+    padding: 18px 28px;
     border: none;
     background-color: #3b4e6b;
     font-family: 'Raleway', sans-serif; 
@@ -20,7 +17,7 @@ input, textarea{
 }
 
 textarea{
-    padding: 12px 18px 60px 18px;
+    padding: 12px 28px 90px 28px;
     resize: none;
 }
 ::placeholder {
@@ -35,16 +32,13 @@ textarea{
 }
 
 .iconWrapper {
-    display: flex;
-    flex-direction: row;
+    @include flexCenterRow;
     width: 50px;
     height: 50px;
     background-color: #3b4e6b;
     padding: 12px 18px;
     margin-top: 20px;
     border-radius: 50%;
-    align-items: center;
-    justify-content: center;
 }
 
 .contactTextWrapper{
@@ -54,7 +48,7 @@ textarea{
 
 p{
     font-family: 'Raleway', sans-serif;
-    color: #ad0068;
+    color: #575757;
     font-size: 14pt;
     line-height: 20pt;
     text-align: center;

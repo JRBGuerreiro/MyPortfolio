@@ -66,26 +66,51 @@ import styled from "styled-components";
         }
     `
 
-const AboutMe = () => {
+    const H1Passion = styled.h1 `
+        color: #283647;
+        font-size: 32pt;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 200;
+        margin: 60px 0 30px 0;
 
+        @media (max-width: 768px) {
+            font-size: 30pt;
+        }
+
+        &:after {
+            opacity: ${({opacityPassions}) => (opacityPassions ? "1" : "0")};
+            transition: opacity 1s;
+            transition-delay: 0.8s;
+            content: "Passions";
+            display: block;
+            color: rgba(40,54,71,.1);
+            transform: rotate3d(1, 0, 0, 114deg) scale(1, 2.5) skew(-38deg, 0deg);
+            margin: -20px 0 0 10px;
+        }
+    `
+
+const AboutMe = () => {
     const [show, doShow] = useState({
         itemOne: false,
         itemTwo: false,
         itemThree: false,
-        itemFour: false
+        itemFour: false, 
+        itemFive: false
     }) 
 
     const ref = useRef(null),
         refTwo = useRef(null),
         refThree = useRef(null),
-        refFour = useRef(null)
+        refFour = useRef(null),
+        refFive = useRef(null)
 
     useLayoutEffect(() => {
         const topPos = element => element.getBoundingClientRect().top
 
         const divPos1 = topPos(ref.current),
               flexDiv50L = topPos(refThree.current),
-              flexDiv50R = topPos(refFour.current)
+              flexDiv50R = topPos(refFour.current),
+              passionsH1 = topPos(refFive.current)
 
         const scrollHandler = () => {
             const scrolPos = window.scrollY + window.innerHeight
@@ -98,6 +123,9 @@ const AboutMe = () => {
             }
             if (flexDiv50R < scrolPos) {
                 doShow(state => ({...state, itemFour:true}))
+            }
+            if (passionsH1 < scrolPos) {
+                doShow(state => ({...state, itemFive:true}))
             }
 
         }
@@ -121,12 +149,6 @@ const AboutMe = () => {
             <DivTitleWrapper animate={show.itemOne} ref={ref}>
                 <H1 className="aboutMeTitle" opacity={show.itemTwo} ref={refTwo}>About Me</H1>
             </DivTitleWrapper>
-            {/* <div className="me">
-                <div className="me1"></div>
-                <div className="me2"></div>
-                <div className="me3"></div>
-                <div className="me4"></div>
-            </div> */}
             <div className="aboutMeFlexWrapper">
                 <DivFlex50LWrapper animateSlideInLeft={show.itemThree} ref={refThree} className="aboutMeFlex50L">
                     <div className="aboutMeImg"/>
@@ -143,6 +165,15 @@ const AboutMe = () => {
                 <DivFlex50RWrapper animateSlideInRight={show.itemFour} ref={refFour} className="aboutMeFlex50R">
                     {icons}
                 </DivFlex50RWrapper>
+            </div>
+            <div className="aboutMePassions">
+                <H1Passion className="aboutMeTitle" opacityPassions={show.itemFive} ref={refFive}>Passions</H1Passion>
+                <div className="me">
+                    <img src="images/scuba.jpg" />
+                    <img src="images/elephants2.jpg" />
+                    <img src="images/thailand1.jpg" />
+                    <img src="images/rugbypitch.jpg" />
+                </div>
             </div>
         </section>
     )

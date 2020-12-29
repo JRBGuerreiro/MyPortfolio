@@ -12,11 +12,9 @@
 
   .modalHeaderWrapper {
       width: 40%;
-      justify-content: center;
-      display: flex;
+      @include flexCenterColumn;
       align-items: center;
       background-color: #365984;
-      flex-direction: column;
 
       img{
         width: 200px;
@@ -43,15 +41,12 @@
   }
 
   .modalRightFlex{
-    display: flex;
-    flex-direction: column;
+    @include flexCenterColumn;
     width: 60%;
   }
 
   .modalRightDescription{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    @include flexCenterColumn;
 
     p{
       font-family: 'Raleway', sans-serif;
@@ -74,9 +69,7 @@
   }
 
   .modalTechnologiesWrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    @include flexCenterRow;
 
     img{
       height: 70px;
