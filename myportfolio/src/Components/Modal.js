@@ -4,8 +4,9 @@ import {IoIosCloseCircleOutline} from "react-icons/io"
 import styled from "styled-components";
 
 const Animation = styled.div `
+    opacity: ${({divOpacity}) => (divOpacity ? "1" : "0")};
     transform: ${({ animate }) => (animate ? "translateY(0vh)" : "translateY(-100vh)")};
-    transition: transform 0.5s;
+    transition: all 0.5s;
     display: flex;
     height: 100%;
     width: 100vw;
@@ -25,7 +26,7 @@ export default function Modal(props) {
     const data = props.data
     
     return (
-        <Animation className="modalWrapper" animate={props.show}>  
+        <Animation className="modalWrapper" animate={props.show} divOpacity={props.show}>  
         {props.data ? 
             <div className="modal" id="modal">
             <div className="modalHeaderWrapper">

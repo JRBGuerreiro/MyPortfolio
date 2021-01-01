@@ -210,7 +210,6 @@ const AboutMe = () => {
                 doShow(state => ({...state, itemFour:true}))
             }
             if(imagesDiv < scrolPos) {
-                debugger;
                 doShow(state => ({...state, itemSix:true}))
             }
             if(passionTitleWrapper < scrolPos) {

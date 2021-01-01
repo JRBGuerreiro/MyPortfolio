@@ -1,6 +1,7 @@
 import React, {useState, useRef, useLayoutEffect} from 'react'
 import styled from "styled-components";
 import {MdContactMail} from "react-icons/md"
+import emailjs from "emailjs-com"
 
 const Form = styled.form `
     transform: translateX(${({animateForm}) => (animateForm ? "0" : "-100vw")});
@@ -54,7 +55,7 @@ const ContactTextWrapper = styled.div `
 `;
 
 const FormData = () => {
-
+    //Animations whilst scrolling
     const [show, doShow] = useState({
         wrapperTitle: false,
         title: false,
@@ -95,6 +96,7 @@ const FormData = () => {
         };
     }, [])
 
+    ///Business logic for the form
     const [input, setInput] = useState({
         name: "",
         lastName: "",
@@ -104,10 +106,29 @@ const FormData = () => {
 
     const handleChange = (event) => {
         const {name, value} = event.target
-        setInput({
+        setInput((prevProps) => ({
+            ...prevProps,
             [name]:value
-        })
+        }))
     };
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+
+        const templateParameters = {
+            from_name: input.name + " " + input.lastName + " " + input.email,
+            to_name: "jguerreirodev@gmail.com",
+            message: input.textArea
+        }
+
+        emailjs
+        .send("my_gmail", "template_rq93odq", templateParameters, "user_jDMfO74vbcFZ662F4U2gQ")
+        .then((result) => {
+            console.log(result.text)
+        }, (error) => {
+            console.log(error.text)
+        })
+    }
     
     return(
         <section className="formWrapper">
@@ -121,10 +142,11 @@ const FormData = () => {
                 <p>Feel free to contact with any questions about my work and availability</p>
             </ContactTextWrapper>
             <Form animateForm={show.form} ref={refForm}>
-                <input type="text" value={input.firstName} name="firstName" onChange={handleChange} placeholder="First Name"></input>
+                <input type="text" value={input.name} name="name" onChange={handleChange} placeholder="First Name"></input>
                 <input type="text" value={input.lastName} name="lastName" onChange={handleChange} placeholder="Last Name"></input>
                 <input type="text" value={input.email} name="email" onChange={handleChange} placeholder="E-mail"></input>
                 <textarea type="textarea" styler="resize:none" value={input.textArea} name="textArea" onChange={handleChange} placeholder="Message..."></textarea>
+                <button type="submit" onClick={handleSubmit}>Submit</button>
             </Form>
         </section>
     )
