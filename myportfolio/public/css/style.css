@@ -835,6 +835,15 @@ footer {
     padding: 0 15px 0 15px;
     line-height: 16pt;
     font-size: 12pt;
+    overflow-y: scroll;
+  }
+  .modalRightDescription p::-webkit-scrollbar {
+    background-color: #ffffff;
+    width: 10px;
+  }
+  .modalRightDescription p::-webkit-scrollbar-thumb {
+    background-color: #365984;
+    border-radius: 8px;
   }
   .modalRightDescription h1 {
     padding: 8px 0 8px 0;
