@@ -130,6 +130,18 @@
     flex-direction: row;
     width: 100%;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    img{
+      width: 130px;
+      height: 80px;
+      margin-top: 10px;
+    }
+
+    h2{
+      padding: 0 15px 0 15px;
+      margin-bottom: 30px;
+    }
   }
 
   .modalRightFlex{

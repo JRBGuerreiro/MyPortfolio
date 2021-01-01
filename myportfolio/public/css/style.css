@@ -856,6 +856,17 @@ footer {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .modalHeaderWrapper img {
+    width: 130px;
+    height: 80px;
+    margin-top: 10px;
+  }
+  .modalHeaderWrapper h2 {
+    padding: 0 15px 0 15px;
+    margin-bottom: 30px;
   }
   .modalRightFlex {
     width: 100%;
