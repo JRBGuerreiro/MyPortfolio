@@ -47,7 +47,7 @@
 
   .modalRightDescription{
     @include flexCenterColumn;
-
+    height: 50%;
     p{
       font-family: 'Raleway', sans-serif;
       padding: 0 20px 0 20px;
