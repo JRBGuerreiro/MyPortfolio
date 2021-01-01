@@ -42,8 +42,8 @@ export default function Modal(props) {
                     <p>{data[0].description}</p>
                     <h1>Technologies</h1>
                     <div className="modalTechnologiesWrapper">
-                        {data[0].technologiesUsed.map((image) => {
-                            return <img src={image}/>
+                        {data[0].technologiesUsed.map((image, index) => {
+                            return <img src={image} key={index}/>
                         })}
                     </div> 
                 </div>

@@ -15,6 +15,17 @@ import styled from "styled-components";
         margin-bottom: 30px;
     `;
 
+    const DivPassionTitleWrapper = styled.div `
+        transform: translateX(${({animatePassion}) => (animatePassion ? "0" : "-100vw")});
+        transition: transform 1s;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        height: 120px;
+        border-radius: 0 0 100px 100px;
+        margin-bottom: 30px;
+    `
+
     const DivFlex50RWrapper = styled.div `
         transform: translateX(${({animateSlideInRight}) => (animateSlideInRight ? "0" : "100vw")});
         transition: transform 1s;
@@ -55,7 +66,7 @@ import styled from "styled-components";
         }
 
         &:after {
-            opacity: ${({opacity}) => (opacity ? "1" : "0")};
+            opacity: ${({opacityAnim}) => (opacityAnim ? "1" : "0")};
             transition: opacity 1s;
             transition-delay: 0.8s;
             content: "About Me";
@@ -78,9 +89,6 @@ import styled from "styled-components";
         }
 
         &:after {
-            opacity: ${({opacityPassions}) => (opacityPassions ? "1" : "0")};
-            transition: opacity 1s;
-            transition-delay: 0.8s;
             content: "Passions";
             display: block;
             color: rgba(40,54,71,.1);
@@ -169,15 +177,16 @@ const AboutMe = () => {
         itemThree: false,
         itemFour: false, 
         itemFive: false,
-        itemSix: false
+        itemSix: false,
+        itemSeven: false
     }) 
 
     const ref = useRef(null),
         refTwo = useRef(null),
         refThree = useRef(null),
         refFour = useRef(null),
-        refFive = useRef(null),
-        refSix = useRef(null)
+        refSix = useRef(null),
+        refSeven = useRef(null)
 
     useLayoutEffect(() => {
         const topPos = element => element.getBoundingClientRect().top
@@ -185,8 +194,8 @@ const AboutMe = () => {
         const divPos1 = topPos(ref.current),
               flexDiv50L = topPos(refThree.current),
               flexDiv50R = topPos(refFour.current),
-              passionsH1 = topPos(refFive.current),
-              imagesDiv = topPos(refSix.current)
+              imagesDiv = topPos(refSix.current),
+              passionTitleWrapper = topPos(refSeven.current)
 
         const scrollHandler = () => {
             const scrolPos = window.scrollY + window.innerHeight
@@ -200,12 +209,12 @@ const AboutMe = () => {
             if (flexDiv50R < scrolPos) {
                 doShow(state => ({...state, itemFour:true}))
             }
-            if (passionsH1 < scrolPos) {
-                doShow(state => ({...state, itemFive:true}))
-            }
             if(imagesDiv < scrolPos) {
                 debugger;
                 doShow(state => ({...state, itemSix:true}))
+            }
+            if(passionTitleWrapper < scrolPos) {
+                doShow(state => ({...state, itemSeven:true}))
             }
 
         }
@@ -231,7 +240,7 @@ const AboutMe = () => {
     return(
         <section className="aboutMeSection">
             <DivTitleWrapper animate={show.itemOne} ref={ref}>
-                <H1 className="aboutMeTitle" opacity={show.itemTwo} ref={refTwo}>About Me</H1>
+                <H1 className="aboutMeTitle" opacityAnim={show.itemTwo} ref={refTwo}>About Me</H1>
             </DivTitleWrapper>
             <div className="aboutMeFlexWrapper">
                 <DivFlex50LWrapper animateSlideInLeft={show.itemThree} ref={refThree} className="aboutMeFlex50L">
@@ -251,16 +260,16 @@ const AboutMe = () => {
                 </DivFlex50RWrapper>
             </div>
             <div className="aboutMePassions">
-                <H1Passion className="aboutMeTitle" opacityPassions={show.itemFive} ref={refFive}>Passions</H1Passion>
+            <DivPassionTitleWrapper animatePassion={show.itemSeven} ref={refSeven}>
+                <H1Passion className="aboutMeTitle">Passions</H1Passion>
+            </DivPassionTitleWrapper>    
                 <Me ref={refSix} animation={show.itemSix}  className="me">
-                    {imageArray.map((image, index) => {
-                        return (
-                            <ImageWrapper  className={"imageWrapper" + index}>
+                    {imageArray.map((image, index) => 
+                            <ImageWrapper  className={"imageWrapper" + index} key={index}>
                                 <h2>{imageTitle[index][1] + " " + imageTitle[index][2]}</h2>
                                 <img src= {image} className={"image" + index} alt={image.split("/")[1].split(".")[0]} />    
                             </ImageWrapper>
-                        )
-                    })}
+                    )}
                 </Me>
             </div>
         </section>

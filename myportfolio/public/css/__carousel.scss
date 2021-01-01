@@ -1,13 +1,7 @@
 .slider{
     position: relative;
-    height: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 0 auto;
     overflow: hidden;
-
+    height: 100%;
     img{
         object-fit: cover;
         width: 100%;
