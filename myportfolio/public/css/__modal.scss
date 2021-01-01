@@ -130,7 +130,7 @@
   .modalHeaderWrapper{
     flex-direction: row;
     width: 100%;
-    height: 20%;
+    height: 25%;
     justify-content: space-evenly;
     flex-wrap: wrap;
 
@@ -148,8 +148,32 @@
 
   .modalRightFlex{
     width: 100%;
-    height: 80%;
+    height: 75%;
   }
 
+}
+
+@media (max-height: 750px) {
+    .modalHeaderWrapper{
+      flex-wrap: nowrap;
+      height: 20%;
+      img{
+        margin-left: 10px; 
+      }
+
+      h2{
+        margin-bottom: 0px;
+      }
+    }
+
+    .modalCloseCross {
+      top: calc(100% - 43px);
+      left: calc(100% - 43px);
+      color: #365984;
+    }
+
+    .modalRightFlex{
+      height: 80%;
+    }
 }
   
