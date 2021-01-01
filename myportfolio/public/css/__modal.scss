@@ -42,18 +42,21 @@
 
   .modalRightFlex{
     @include flexCenterColumn;
+    justify-content: flex-start;
     width: 60%;
   }
 
   .modalRightDescription{
     @include flexCenterColumn;
-    height: 50%;
+    height: 60%;
     p{
       font-family: 'Raleway', sans-serif;
       padding: 0 20px 0 20px;
       color: #414141;
       text-align: justify;
       line-height: 20pt;
+      font-size: 12pt;
+      height: 30%;
     }
 
     h1{
@@ -65,13 +68,14 @@
       margin: 0;
       padding: 10px 0 10px 0;
       font-weight: 500;
-      width: 100%
+      width: 100%;
+      height: 10%;
     }
   }
 
   .modalTechnologiesWrapper {
     @include flexCenterRow;
-
+    height: 50%;
     img{
       height: 70px;
       width: 70px;
@@ -82,8 +86,8 @@
 
   @media (max-width: 960px) {
     .modal{
-      width: 700px;
-      height: 500px;
+      width: 800px;
+      height: 600px;
     }
 
     .modalHeaderWrapper {
@@ -101,7 +105,7 @@
       p{
         padding: 0 15px 0 15px;
         line-height: 16pt;
-        font-size: 11pt;
+        font-size: 12pt;
       }
   
       h1{
@@ -119,7 +123,7 @@
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 800px) {
   .modal{
     flex-direction: column;
     height: 90%;
@@ -149,6 +153,16 @@
   .modalRightFlex{
     width: 100%;
     height: 75%;
+  }
+
+  .modalTechnologiesWrapper{
+    height: 40%;
+  }
+
+  .modalRightDescription {
+    h1{
+      padding: 16px 0 16px 0;
+    }
   }
 
 }
