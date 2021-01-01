@@ -56,7 +56,7 @@
       text-align: justify;
       line-height: 20pt;
       font-size: 12pt;
-      height: 30%;
+      height: 40%;
     }
 
     h1{
@@ -75,7 +75,7 @@
 
   .modalTechnologiesWrapper {
     @include flexCenterRow;
-    height: 50%;
+    height: 30%;
     img{
       height: 70px;
       width: 70px;
@@ -109,19 +109,21 @@
         overflow-y: scroll;
 
         &::-webkit-scrollbar {
-            background-color: #ffffff;
-            width: 10px;
+            background-color: #cccccc;
+            width: 8px;
         }
 
         &::-webkit-scrollbar-thumb {
           background-color: #365984;
-          border-radius: 8px;
+          border-radius: 3px;
+          height: 1px;
         }
 
       }
   
       h1{
         padding: 8px 0 8px 0;
+        font-size: 14pt;
       }
     }
 

@@ -106,18 +106,18 @@ $primaryTextColor: #ffffff;
 //small devices
 @media (max-width: 768px) {
     .initialGreeting{
-        font-size: 28pt;
+        font-size: 20pt;
         margin: 0 10px 10px 10px;
     }
 
     .initialGreetingName {
-        font-size: 22pt;
+        font-size: 16pt;
         margin-bottom: 30px;
     }
 
     .initialButton {
-        padding: 15px 15px;
-        font-size: 14pt;
+        padding: 11px 11px;
+        font-size: 10pt;
     }
 
     .initialButton:hover {
