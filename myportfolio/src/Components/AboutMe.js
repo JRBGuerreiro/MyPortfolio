@@ -12,7 +12,7 @@ import styled from "styled-components";
         justify-content: center;
         height: 120px;
         border-radius: 0 0 100px 100px;
-        margin-top: 35px;
+        margin-bottom: 30px;
     `;
 
     const DivFlex50RWrapper = styled.div `
@@ -48,7 +48,7 @@ import styled from "styled-components";
         font-size: 32pt;
         font-family: 'Raleway', sans-serif;
         font-weight: 200;
-        margin-bottom: 10px;
+        margin-top: 80px;
 
         @media (max-width: 768px) {
             font-size: 30pt;
@@ -89,20 +89,95 @@ import styled from "styled-components";
         }
     `
 
+    const Me = styled.div `
+        display: flex;
+        width: 60%;
+        transform: ${({animation}) => (animation ? "scale(1)" : "scale(0)")};
+        transition: all 1s;
+        margin-top: 40px;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        img{
+            object-fit: cover;
+            height: 400px;
+            width: 400px;
+        }
+    `
+    const ImageWrapper = styled.div `
+        height: 400px;
+        position: relative;
+        &::before {
+            content: "";
+            width: 100%;
+            height: 0;
+            transition: 0.4s ease;
+            background-color: #283647;
+            opacity: 0.5;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        h2{
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            position: absolute;
+            margin:0;
+            opacity:0;
+            transition-delay:0.3s;
+            transition: 1s ease;
+            font-family: 'Raleway', sans-serif;
+            color: #f5f5f5;
+            z-index: 20;
+            width: 100%;
+            text-align: center;
+        }
+
+        &:hover {
+            h2 {
+                opacity: 1;
+            }
+        }
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 0;
+            opacity: 0.5;
+            transition: 0.4s ease;
+            background-color: #283647;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        &:hover::before{
+            height: 50%;
+        }
+
+        &:hover::after{
+            height: 50%;
+        }
+    `
+
 const AboutMe = () => {
     const [show, doShow] = useState({
         itemOne: false,
         itemTwo: false,
         itemThree: false,
         itemFour: false, 
-        itemFive: false
+        itemFive: false,
+        itemSix: false
     }) 
 
     const ref = useRef(null),
         refTwo = useRef(null),
         refThree = useRef(null),
         refFour = useRef(null),
-        refFive = useRef(null)
+        refFive = useRef(null),
+        refSix = useRef(null)
 
     useLayoutEffect(() => {
         const topPos = element => element.getBoundingClientRect().top
@@ -110,7 +185,8 @@ const AboutMe = () => {
         const divPos1 = topPos(ref.current),
               flexDiv50L = topPos(refThree.current),
               flexDiv50R = topPos(refFour.current),
-              passionsH1 = topPos(refFive.current)
+              passionsH1 = topPos(refFive.current),
+              imagesDiv = topPos(refSix.current)
 
         const scrollHandler = () => {
             const scrolPos = window.scrollY + window.innerHeight
@@ -126,6 +202,10 @@ const AboutMe = () => {
             }
             if (passionsH1 < scrolPos) {
                 doShow(state => ({...state, itemFive:true}))
+            }
+            if(imagesDiv < scrolPos) {
+                debugger;
+                doShow(state => ({...state, itemSix:true}))
             }
 
         }
@@ -144,6 +224,10 @@ const AboutMe = () => {
         />
     )
 
+    const imageArray = ["images/ScubaDiving.jpg", "images/NatureWildlife.jpg", "images/TravellingDiscovering.jpg", "images/ContactSports.jpg"]
+    const imageTitle = imageArray.map((image) => {
+        return image.split("/")[1].split(".")[0].match(/([A-Z]+[^A-Z]*|[^A-Z]+)([A-Z]+[^A-Z]*|[^A-Z]+)*/)
+    })
     return(
         <section className="aboutMeSection">
             <DivTitleWrapper animate={show.itemOne} ref={ref}>
@@ -168,12 +252,16 @@ const AboutMe = () => {
             </div>
             <div className="aboutMePassions">
                 <H1Passion className="aboutMeTitle" opacityPassions={show.itemFive} ref={refFive}>Passions</H1Passion>
-                <div className="me">
-                    <img src="images/scuba.jpg" />
-                    <img src="images/elephants2.jpg" />
-                    <img src="images/thailand1.jpg" />
-                    <img src="images/rugbypitch.jpg" />
-                </div>
+                <Me ref={refSix} animation={show.itemSix}  className="me">
+                    {imageArray.map((image, index) => {
+                        return (
+                            <ImageWrapper  className={"imageWrapper" + index}>
+                                <h2>{imageTitle[index][1] + " " + imageTitle[index][2]}</h2>
+                                <img src= {image} className={"image" + index} alt={image.split("/")[1].split(".")[0]} />    
+                            </ImageWrapper>
+                        )
+                    })}
+                </Me>
             </div>
         </section>
     )

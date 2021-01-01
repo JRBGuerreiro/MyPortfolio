@@ -19,19 +19,19 @@
     margin-top: 40px;
 }
 
-.me {
-    display: flex;
-    width: 60%;
-    margin-top: 40px;
-    justify-content: center;
-    flex-wrap: wrap;
+// .me {
+//     display: flex;
+//     width: 60%;
+//     margin-top: 40px;
+//     justify-content: center;
+//     flex-wrap: wrap;
 
-    img{
-        object-fit: cover;
-        height: 400px;
-        width: 400px;
-    }
-}
+//     img{
+//         object-fit: cover;
+//         height: 400px;
+//         width: 400px;
+//     }
+// }
 
 .aboutMeFlexWrapper{
     @include flexCenterRow;

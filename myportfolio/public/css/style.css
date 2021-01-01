@@ -291,7 +291,7 @@ footer {
   font-weight: 200;
   margin-bottom: 10px;
   position: absolute;
-  top: -135px;
+  top: -150px;
 }
 
 .projectsTitleWrapper {
@@ -310,10 +310,9 @@ footer {
       -ms-flex-direction: row;
           flex-direction: row;
   border-radius: 0 0 100px 100px;
-  background-color: #3b4e6b;
   border-bottom: 100px solid transparent;
   border-left: 100vh solid transparent;
-  border-top: 180px solid #fcfcfc;
+  border-top: 270px solid #ffffff;
   border-right: 100vh solid transparent;
 }
 
@@ -474,26 +473,6 @@ footer {
   position: relative;
   background-color: #ffffff;
   margin-top: 40px;
-}
-
-.me {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 60%;
-  margin-top: 40px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.me img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 400px;
-  width: 400px;
 }
 
 .aboutMeFlexWrapper {

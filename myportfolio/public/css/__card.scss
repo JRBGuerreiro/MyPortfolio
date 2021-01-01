@@ -19,7 +19,7 @@
         font-weight: 200;
         margin-bottom: 10px;
         position: absolute;
-        top: -135px;
+        top: -150px;
     }
 }
 
@@ -27,10 +27,9 @@
     position: relative;
     @include flexCenterRow;
     border-radius: 0 0 100px 100px;
-    background-color: #3b4e6b;
     border-bottom: 100px solid transparent;
     border-left: 100vh solid transparent;
-    border-top: 180px solid #fcfcfc;
+    border-top: 270px solid #ffffff;
     border-right: 100vh solid transparent;
 }
 
