@@ -47,7 +47,7 @@
     margin-top: 40px;
     @include flexCenterRow;
 
-    h2, h4 {
+    h2, p {
         color: #414141;
         font-family: 'Raleway', sans-serif;
     }
@@ -57,7 +57,7 @@
         font-size: 25px;
     }
 
-    h4 {
+    p {
         line-height: 20pt;
         text-align: justify;
         font-weight: lighter;
@@ -179,7 +179,7 @@
             font-size: 26pt ;
         }
 
-        h4{
+        p{
             font-size: 14pt;
         }
     }
@@ -210,7 +210,7 @@
             font-size: 20pt;
         }
 
-        h4{
+        p{
             line-height: 21pt;
             margin: 20px 10px 0 10px;
             font-size: 12pt;

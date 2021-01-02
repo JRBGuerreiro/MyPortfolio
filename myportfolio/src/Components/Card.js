@@ -7,7 +7,7 @@ function Card(props) {
                     <div style={{backgroundImage: `url(` + props.card.imageUrl + `)`}} className="cardImage"/>
                 </div>
                 <div className="cardTitle">
-                    <h4 className="cardTitleText">{props.card.title}</h4>
+                    <p className="cardTitleText">{props.card.title}</p>
                 </div>
             </div>
     )

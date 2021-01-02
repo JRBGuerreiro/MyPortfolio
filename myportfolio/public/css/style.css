@@ -88,8 +88,9 @@ footer {
 }
 
 .copyrightText {
-  color: #2f63a3;
+  color: #3dc8c5;
   font-family: 'Raleway', sans-serif;
+  font-size: 10pt;
 }
 
 .copyrightText span {
@@ -537,7 +538,7 @@ footer {
           flex-direction: row;
 }
 
-.aboutMeFlex50R h2, .aboutMeFlex50R h4, .aboutMeFlex50L h2, .aboutMeFlex50L h4 {
+.aboutMeFlex50R h2, .aboutMeFlex50R p, .aboutMeFlex50L h2, .aboutMeFlex50L p {
   color: #414141;
   font-family: 'Raleway', sans-serif;
 }
@@ -547,7 +548,7 @@ footer {
   font-size: 25px;
 }
 
-.aboutMeFlex50R h4, .aboutMeFlex50L h4 {
+.aboutMeFlex50R p, .aboutMeFlex50L p {
   line-height: 20pt;
   text-align: justify;
   font-weight: lighter;
@@ -688,7 +689,7 @@ footer {
   .aboutMeFlex50L h2 {
     font-size: 26pt;
   }
-  .aboutMeFlex50L h4 {
+  .aboutMeFlex50L p {
     font-size: 14pt;
   }
   .aboutMeFlex50R {
@@ -718,7 +719,7 @@ footer {
     margin: 25px 10px 10px 10px;
     font-size: 20pt;
   }
-  .aboutMeFlex50L h4 {
+  .aboutMeFlex50L p {
     line-height: 21pt;
     margin: 20px 10px 0 10px;
     font-size: 12pt;
@@ -1134,13 +1135,24 @@ p {
   text-align: center;
 }
 
+label {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 button {
   background-color: #3dc8c5;
   padding: 12px 20px 12px 20px;
   border: none;
   margin-top: 8px;
   cursor: pointer;
-  color: #ffffff;
+  color: #2a2a2a;
   font-family: 'Raleway', sans-serif;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -1152,6 +1164,7 @@ button:focus {
 
 button:hover {
   background-color: #3b4e6b;
+  color: #ffffff;
 }
 
 html, body {

@@ -219,14 +219,14 @@ const AboutMe = () => {
                 <DivFlex50LWrapper animateSlideInLeft={show.itemThree} ref={refThree} className="aboutMeFlex50L">
                     <div className="aboutMeImg"/>
                     <h2>Who am I?</h2>
-                    <h4>Hi, my name is Jorge and I'm a FrontEnd Software Developer
+                    <p>Hi, my name is Jorge and I'm a FrontEnd Software Developer
                        
                         I currently work for Bet365 in Stoke, United Kingdom
                         
                         I am passionated about creating seamless user experience
                        
                         I love creating dynamic animations and CSS effects to engage users.
-                    </h4>
+                    </p>
                 </DivFlex50LWrapper>
                 <DivFlex50RWrapper animateSlideInRight={show.itemFour} ref={refFour} className="aboutMeFlex50R">
                     {icons}

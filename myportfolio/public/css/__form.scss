@@ -58,13 +58,24 @@ p{
     text-align: center;
 }
 
+label{
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
 button {
     background-color: #3dc8c5;
     padding: 12px 20px 12px 20px;
     border: none;
     margin-top: 8px;
     cursor: pointer;
-    color: #ffffff;
+    color: #2a2a2a;
     font-family: 'Raleway', sans-serif;
     transition: all 0.3s ease-in-out;
 
@@ -74,5 +85,6 @@ button {
 
     &:hover {
         background-color: #3b4e6b;
+        color: #ffffff;
     }
 }

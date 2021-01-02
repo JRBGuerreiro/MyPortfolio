@@ -19,9 +19,9 @@ function Footer() {
             </div>
 
             <div className="copyright">
-                <h5 className="copyrightText">JORGE GUERREIRO
+                <p className="copyrightText">JORGE GUERREIRO
                     <span>{'\u00A9'}2020</span>
-                 </h5>
+                 </p>
             </div>
             
         </footer>
