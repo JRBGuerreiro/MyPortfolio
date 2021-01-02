@@ -100,8 +100,6 @@ import styled from "styled-components";
     const Me = styled.div `
         display: flex;
         width: 60%;
-        transform: ${({animation}) => (animation ? "scale(1)" : "scale(0)")};
-        transition: all 1s;
         margin-top: 40px;
         justify-content: center;
         flex-wrap: wrap;
@@ -113,61 +111,23 @@ import styled from "styled-components";
         }
     `
     const ImageWrapper = styled.div `
-        height: 400px;
-        position: relative;
-        &::before {
-            content: "";
-            width: 100%;
-            height: 0;
-            transition: 0.4s ease;
-            background-color: #283647;
-            opacity: 0.5;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
+        transform: translateX(${({animateSlideInLeftImg}) => (animateSlideInLeftImg ? "0" : "-100vw")});
+        transition: transform 1s;
+    `
 
-        h2{
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%,-50%);
-            position: absolute;
-            margin:0;
-            opacity:0;
-            transition-delay:0.3s;
-            transition: 1s ease;
-            font-family: 'Raleway', sans-serif;
-            color: #f5f5f5;
-            z-index: 20;
-            width: 100%;
-            text-align: center;
-        }
+    const ImageWrapper2 = styled.div `
+        transform: translateX(${({animateSlideInRightImg2}) => (animateSlideInRightImg2 ? "0" : "100vw")});
+        transition: transform 1s;
+    `
 
-        &:hover {
-            h2 {
-                opacity: 1;
-            }
-        }
+    const ImageWrapper3 = styled.div `
+        transform: translateX(${({animateSlideInLeftImg3}) => (animateSlideInLeftImg3 ? "0" : "-100vw")});
+        transition: transform 1s;
+    `
 
-        &::after {
-            content: "";
-            width: 100%;
-            height: 0;
-            opacity: 0.5;
-            transition: 0.4s ease;
-            background-color: #283647;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-        }
-
-        &:hover::before{
-            height: 50%;
-        }
-
-        &:hover::after{
-            height: 50%;
-        }
+    const ImageWrapper4 = styled.div `
+        transform: translateX(${({animateSlideInRightImg4}) => (animateSlideInRightImg4 ? "0" : "100vw")});
+        transition: transform 1s;
     `
 
 const AboutMe = () => {
@@ -177,16 +137,22 @@ const AboutMe = () => {
         itemThree: false,
         itemFour: false, 
         itemFive: false,
-        itemSix: false,
-        itemSeven: false
+        itemSeven: false,
+        img:false,
+        img1:false,
+        img2:false,
+        img3:false,
     }) 
 
     const ref = useRef(null),
         refTwo = useRef(null),
         refThree = useRef(null),
         refFour = useRef(null),
-        refSix = useRef(null),
-        refSeven = useRef(null)
+        refSeven = useRef(null),
+        refImg = useRef(null),
+        refImg1 = useRef(null),
+        refImg2 = useRef(null),
+        refImg3 = useRef(null)
 
     useLayoutEffect(() => {
         const topPos = element => element.getBoundingClientRect().top
@@ -194,8 +160,11 @@ const AboutMe = () => {
         const divPos1 = topPos(ref.current),
               flexDiv50L = topPos(refThree.current),
               flexDiv50R = topPos(refFour.current),
-              imagesDiv = topPos(refSix.current),
-              passionTitleWrapper = topPos(refSeven.current)
+              passionTitleWrapper = topPos(refSeven.current),
+              imgPos = topPos(refImg.current),
+              imgPos1 = topPos(refImg1.current),
+              imgPos2 = topPos(refImg2.current),
+              imgPos3 = topPos(refImg3.current)
 
         const scrollHandler = () => {
             const scrolPos = window.scrollY + window.innerHeight
@@ -209,11 +178,20 @@ const AboutMe = () => {
             if (flexDiv50R < scrolPos) {
                 doShow(state => ({...state, itemFour:true}))
             }
-            if(imagesDiv < scrolPos) {
-                doShow(state => ({...state, itemSix:true}))
-            }
             if(passionTitleWrapper < scrolPos) {
                 doShow(state => ({...state, itemSeven:true}))
+            }
+            if(imgPos < scrolPos) {
+                doShow(state => ({...state, img:true }))
+            }
+            if(imgPos1 < scrolPos) {
+                doShow(state => ({...state, img1:true }))
+            }
+            if(imgPos2 < scrolPos) {
+                doShow(state => ({...state, img2:true }))
+            }
+            if(imgPos3 < scrolPos) {
+                doShow(state => ({...state, img3:true }))
             }
 
         }
@@ -232,10 +210,6 @@ const AboutMe = () => {
         />
     )
 
-    const imageArray = ["images/ScubaDiving.jpg", "images/NatureWildlife.jpg", "images/TravellingDiscovering.jpg", "images/ContactSports.jpg"]
-    const imageTitle = imageArray.map((image) => {
-        return image.split("/")[1].split(".")[0].match(/([A-Z]+[^A-Z]*|[^A-Z]+)([A-Z]+[^A-Z]*|[^A-Z]+)*/)
-    })
     return(
         <section className="aboutMeSection">
             <DivTitleWrapper animate={show.itemOne} ref={ref}>
@@ -262,13 +236,23 @@ const AboutMe = () => {
             <DivPassionTitleWrapper animatePassion={show.itemSeven} ref={refSeven}>
                 <H1Passion className="aboutMeTitle">Passions</H1Passion>
             </DivPassionTitleWrapper>    
-                <Me ref={refSix} animation={show.itemSix}  className="me">
-                    {imageArray.map((image, index) => 
-                            <ImageWrapper  className={"imageWrapper" + index} key={index}>
-                                <h2>{imageTitle[index][1] + " " + imageTitle[index][2]}</h2>
-                                <img src= {image} className={"image" + index} alt={image.split("/")[1].split(".")[0]} />    
-                            </ImageWrapper>
-                    )}
+                <Me className="me">
+                    <ImageWrapper ref={refImg} animateSlideInLeftImg={show.img} className="passionsImgWrapper">
+                        <h2>Scuba Diving</h2>
+                        <img src= "images/ScubaDiving.jpg" alt="scubadiving" />    
+                    </ImageWrapper >    
+                    <ImageWrapper2 animateSlideInRightImg2={show.img1} ref={refImg1} className="passionsImgWrapper">
+                        <h2>Wildlife Nature</h2>
+                        <img src= "images/NatureWildlife.jpg" alt="elephant" /> 
+                    </ImageWrapper2>    
+                    <ImageWrapper3 ref={refImg2} animateSlideInLeftImg3={show.img2} className="passionsImgWrapper">
+                        <h2>Travelling Discovering</h2>
+                        <img src= "images/TravellingDiscovering.jpg" alt="sightseeing" />    
+                    </ImageWrapper3>    
+                    <ImageWrapper4 ref={refImg3} animateSlideInRightImg4={show.img3} className="passionsImgWrapper">
+                        <h2>Rugby</h2>
+                        <img src= "images/ContactSports.jpg" alt="rugby" />     
+                    </ImageWrapper4>
                 </Me>
             </div>
         </section>

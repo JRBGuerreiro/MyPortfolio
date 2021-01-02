@@ -44,7 +44,7 @@ export default function Modal(props) {
                     <h1>Technologies</h1>
                     <div className="modalTechnologiesWrapper">
                         {data[0].technologiesUsed.map((image, index) => {
-                            return <img src={image} key={index}/>
+                            return <img src={image} key={index} alt={image.split("/")[2].split(".")[0] + " logo"}/>
                         })}
                     </div> 
                 </div>

@@ -3,7 +3,6 @@
     @include flexCenterRow;
     flex-wrap: wrap;
     background-color: #3b4e6b;
-    margin-top: 40px;
     margin-bottom: 60px;
 }
 
@@ -63,8 +62,6 @@
     width: 100%;
     height: 0%;
     background-color: #ffffff;
-    border-bottom-left-radius: 13px;
-    border-bottom-right-radius: 13px;
 }
 .card:hover {
     .card-inner{
@@ -79,7 +76,7 @@
 
     &::after {
         height: 15%;
-        opacity: 0.8;
+        opacity: 1;
     }
 }
 

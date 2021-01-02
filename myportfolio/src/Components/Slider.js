@@ -21,7 +21,7 @@ const Slider = (props) => {
             {props.images.map((slide, index) => {
                 return(
                     <div className={index === current ? 'slide-active' : 'slide'} key={index}>
-                        {index === current && (<img src={slide} alt="travel image"/>
+                        {index === current && (<img src={slide} alt="carrousel figure"/>
                     )}
                         
                     </div>

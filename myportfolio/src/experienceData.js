@@ -20,7 +20,7 @@ const experienceData = [
         image2Carrousel: "../images/bentayga-rse-2.jpg",
         image3Carrousel: "../images/2021-bentley-bentayga.jpg",
         logo: "../images/bentleyLogo.svg",
-        technologiesUsed: ["../images/javascript.svg", "../images/sketch.svg"]
+        technologiesUsed: ["../images/javascript.svg", "../images/sketch.svg"],
 
     },
     {

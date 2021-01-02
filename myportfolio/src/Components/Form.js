@@ -1,4 +1,4 @@
-import React, {useState, useRef, useLayoutEffect, useEffect} from 'react'
+import React, {useState, useRef, useLayoutEffect} from 'react'
 import styled from "styled-components";
 import {MdContactMail} from "react-icons/md"
 import useForm from "./useForm"
@@ -6,10 +6,10 @@ import validateForm from "./validateForm"
 
 const Form = styled.form `
     transform: translateX(${({animateForm}) => (animateForm ? "0" : "-100vw")});
-    transition: transform 1s;
+    transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     width: 600px;
     margin: 0 0 30px 0;
-    background-color: #ffffff;
+    background-color: #fcfcfc;
     display:flex;
     border-radius: 5px;
     flex-direction: column;
@@ -17,8 +17,9 @@ const Form = styled.form `
     align-items: center;
 
     p{
-        color: red;
+        color: #3dc8c5;
         font-size: 10pt;
+        margin: 0;
     }
 `;
 
@@ -60,26 +61,43 @@ const ContactTextWrapper = styled.div `
     padding: 12px 18px;
 `;
 
+const Icon = styled.div `
+    transform: translateX(${({animateIcon}) => (animateIcon ? "0" : "-100vw")});
+    transition: transform 1s ease
+`
+
+const Paragraph = styled.p `
+    opacity: ${({animateOpacityParagraph}) => (animateOpacityParagraph ? "1" : "0")};
+    transition: opacity 1s;
+    transition-delay: 0.6s;
+`
+
 const FormData = () => {
     //Animations whilst scrolling
     const [show, doShow] = useState({
         wrapperTitle: false,
         title: false,
         form: false,
-        contactWrapper: false
+        contactWrapper: false,
+        icon: false,
+        paragraph: false
     })
 
     const refWrapperTitle = useRef(null),
         refTitle = useRef(null),
         refForm = useRef(null),
-        refContactTitleWrapper = useRef(null)
+        refContactTitleWrapper = useRef(null),
+        refIcon = useRef(null),
+        refParagraph = useRef(null)
 
     useLayoutEffect(() => {
         const topPos = element => element.getBoundingClientRect().top
 
         const titleWrapperPos = topPos(refWrapperTitle.current),
               formWrapperPos = topPos(refForm.current),
-              contactWrapperPos = topPos(refContactTitleWrapper.current)
+              contactWrapperPos = topPos(refContactTitleWrapper.current),
+              iconPos = topPos(refIcon.current),
+              paragraphPos = topPos(refParagraph.current)
 
         const scrollHandler = () => {
             const scrolPos = window.scrollY + window.innerHeight
@@ -92,6 +110,12 @@ const FormData = () => {
             }
             if(contactWrapperPos < scrolPos) {
                 doShow(state => ({...state, contactWrapper: true}))
+            }
+            if(iconPos < scrolPos) {
+                doShow(state => ({...state, icon: true}))
+            }
+            if(paragraphPos < scrolPos) {
+                doShow(state => ({...state, paragraph: true}))
             }
 
         }
@@ -111,11 +135,11 @@ const FormData = () => {
             <DivWrapper animate={show.wrapperTitle} ref={refWrapperTitle}>
                 <HeaderTitle animateOpacity={show.title} ref={refTitle}>Contact</HeaderTitle>
             </DivWrapper>
-            <div className="iconWrapper">
+            <Icon ref={refIcon} animateIcon={show.icon} className="iconWrapper">
                 <MdContactMail className="form-icon"/>
-            </div>
+            </Icon>
             <ContactTextWrapper animateOpacityWrapper={show.contactWrapper} ref={refContactTitleWrapper} className="contactTextWrapper">
-                <p>Feel free to contact with any questions about my work and availability</p>
+                <Paragraph ref={refParagraph} animateOpacityParagraph={show.paragraph}>Feel free to contact with any questions about my work and availability</Paragraph>
             </ContactTextWrapper>
             <Form animateForm={show.form} ref={refForm} name="contact-form">
                 {formErrors.name && <p>{formErrors.name}</p>}
