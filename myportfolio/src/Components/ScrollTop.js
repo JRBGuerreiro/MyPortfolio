@@ -7,7 +7,6 @@ const ScrollTop = () => {
     useLayoutEffect(() => {
 
         const checkScroll = () => {
-            debugger;
             var scrollHeight = document.body.scrollHeight
             var currentPosition = document.documentElement.scrollTop
             var offset = scrollHeight - currentPosition
