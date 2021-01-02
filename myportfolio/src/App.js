@@ -5,6 +5,7 @@ import AboutMe from './Components/AboutMe';
 import Projects from './Components/Projects';
 import Modal from './Components/Modal';
 import Form from './Components/Form'
+import ScrollTop from './Components/ScrollTop';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
 			<Projects setData={handleData} setShow = {setShow}/>
 			<Modal data={data} show={show} setShow={setShow} />
 			<Form/>
+			<ScrollTop></ScrollTop>
 			<Footer/>
 		</div>
     )

@@ -17,6 +17,13 @@ function HeroSection() {
         }
     }, [])
 
+    const scrollPage = (event) => {
+        event.preventDefault()
+
+        var viewportHeight = window.innerHeight
+        window.scrollTo({top:viewportHeight, behavior:'smooth'})
+    }
+
 
      return(
         <section className="heroSection">
@@ -24,7 +31,7 @@ function HeroSection() {
             <div className="heroHeaderWrapper">
                 <h1 className="initialGreeting">Hello and welcome to my portfolio</h1>
                 <h2 className="initialGreetingName">My name is Jorge Guerreiro</h2>
-                <button className="initialButton">Get to know me<span/></button>
+                <button onClick={scrollPage} className="initialButton">Get to know me<span/></button>
             </div>
         </section>
     )
