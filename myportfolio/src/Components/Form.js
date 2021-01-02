@@ -1,7 +1,8 @@
-import React, {useState, useRef, useLayoutEffect} from 'react'
+import React, {useState, useRef, useLayoutEffect, useEffect} from 'react'
 import styled from "styled-components";
 import {MdContactMail} from "react-icons/md"
-import emailjs from "emailjs-com"
+import useForm from "./useForm"
+import validateForm from "./validateForm"
 
 const Form = styled.form `
     transform: translateX(${({animateForm}) => (animateForm ? "0" : "-100vw")});
@@ -14,6 +15,11 @@ const Form = styled.form `
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    p{
+        color: red;
+        font-size: 10pt;
+    }
 `;
 
 const DivWrapper = styled.div `
@@ -96,39 +102,9 @@ const FormData = () => {
         };
     }, [])
 
-    ///Business logic for the form
-    const [input, setInput] = useState({
-        name: "",
-        lastName: "",
-        email:"",
-        textArea: ""
-    })
+    ///Business logic for the form with custom hook
 
-    const handleChange = (event) => {
-        const {name, value} = event.target
-        setInput((prevProps) => ({
-            ...prevProps,
-            [name]:value
-        }))
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault()
-
-        const templateParameters = {
-            from_name: input.name + " " + input.lastName + " " + input.email,
-            to_name: "jguerreirodev@gmail.com",
-            message: input.textArea
-        }
-
-        emailjs
-        .send("my_gmail", "template_rq93odq", templateParameters, "user_jDMfO74vbcFZ662F4U2gQ")
-        .then((result) => {
-            console.log(result.text)
-        }, (error) => {
-            console.log(error.text)
-        })
-    }
+    const {handleChange, values, handleSubmit, paragraph, formErrors} = useForm(validateForm)
     
     return(
         <section className="formWrapper">
@@ -141,11 +117,16 @@ const FormData = () => {
             <ContactTextWrapper animateOpacityWrapper={show.contactWrapper} ref={refContactTitleWrapper} className="contactTextWrapper">
                 <p>Feel free to contact with any questions about my work and availability</p>
             </ContactTextWrapper>
-            <Form animateForm={show.form} ref={refForm}>
-                <input type="text" value={input.name} name="name" onChange={handleChange} placeholder="First Name"></input>
-                <input type="text" value={input.lastName} name="lastName" onChange={handleChange} placeholder="Last Name"></input>
-                <input type="text" value={input.email} name="email" onChange={handleChange} placeholder="E-mail"></input>
-                <textarea type="textarea" styler="resize:none" value={input.textArea} name="textArea" onChange={handleChange} placeholder="Message..."></textarea>
+            <Form animateForm={show.form} ref={refForm} name="contact-form">
+                {formErrors.name && <p>{formErrors.name}</p>}
+                <input type="text" value={values.name} name="name" onChange={handleChange} placeholder="First Name" id="name"></input>
+                {formErrors.lastName && <p>{formErrors.lastName}</p>}
+                <input type="text" value={values.lastName} name="lastName" onChange={handleChange} placeholder="Last Name" id="lastname"></input>
+                {formErrors.email && <p>{formErrors.email}</p>}
+                <input type="text" value={values.email} name="email" onChange={handleChange} placeholder="E-mail" id="email"></input>
+                {formErrors.textArea && <p>{formErrors.textArea}</p>}
+                <textarea type="textarea" styler="resize:none" value={values.textArea} name="textArea" onChange={handleChange} placeholder="Message..." id="message"></textarea>
+                {paragraph}
                 <button type="submit" onClick={handleSubmit}>Submit</button>
             </Form>
         </section>
