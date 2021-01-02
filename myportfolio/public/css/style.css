@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/raleway-v18-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../fonts/raleway-v18-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/raleway-v18-latin-regular.woff2") format("woff2"), url("../fonts/raleway-v18-latin-regular.woff") format("woff"), url("../fonts/raleway-v18-latin-regular.ttf") format("truetype"), url("../fonts/raleway-v18-latin-regular.svg#Raleway") format("svg");
+  /* Legacy iOS */
+}
+
 footer {
   padding: 60px 0 50px 0;
   background-color: #1b242f;
@@ -1152,6 +1162,16 @@ button:focus {
 
 button:hover {
   background-color: #3b4e6b;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/raleway-v18-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../fonts/raleway-v18-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/raleway-v18-latin-regular.woff2") format("woff2"), url("../fonts/raleway-v18-latin-regular.woff") format("woff"), url("../fonts/raleway-v18-latin-regular.ttf") format("truetype"), url("../fonts/raleway-v18-latin-regular.svg#Raleway") format("svg");
+  /* Legacy iOS */
 }
 
 html, body {
