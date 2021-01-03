@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 function HeroSection() {
 
     const handleScroll = (event) => {
@@ -28,6 +29,7 @@ function HeroSection() {
      return(
         <section className="heroSection">
            <video className="heroVideo" src="images/videoSea.mp4" autoPlay playsInline muted loop/>
+           
             <div className="heroHeaderWrapper">
                 <h1 className="initialGreeting">Hello and welcome to my portfolio</h1>
                 <h2 className="initialGreetingName">My name is Jorge Guerreiro</h2>

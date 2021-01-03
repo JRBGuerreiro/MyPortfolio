@@ -21,7 +21,7 @@ function Projects(props) {
     )
 
     return(
-        <section className="projects">
+        <section className="projects" id="projects">
             <div className="projectsTitleWrapper">
                 <h1>Projects</h1>
             </div>

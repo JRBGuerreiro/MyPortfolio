@@ -6,6 +6,8 @@ import Projects from './Components/Projects';
 import Modal from './Components/Modal';
 import Form from './Components/Form'
 import ScrollTop from './Components/ScrollTop';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import NavBar from './Components/NavBar'
 
 function App() {
 
@@ -17,6 +19,14 @@ function App() {
 
 	return (
 		<div>
+			<Router>
+                <NavBar/>
+                <Switch>
+                    <Route path='/aboutme' component={AboutMe}/>
+                    <Route path='/projects' component={Projects}/>
+                    <Route path='/contact' component={Form}/>
+                </Switch>
+           </Router>
 			<HeroSection/>
 			<AboutMe/>
 			<Projects setData={handleData} setShow = {setShow}/>

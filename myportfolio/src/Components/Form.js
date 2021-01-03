@@ -131,7 +131,7 @@ const FormData = () => {
     const {handleChange, values, handleSubmit, paragraph, formErrors} = useForm(validateForm)
     
     return(
-        <section className="formWrapper">
+        <section className="formWrapper" id="contact">
             <DivWrapper animate={show.wrapperTitle} ref={refWrapperTitle}>
                 <HeaderTitle animateOpacity={show.title} ref={refTitle}>Contact</HeaderTitle>
             </DivWrapper>
@@ -143,16 +143,16 @@ const FormData = () => {
             </ContactTextWrapper>
             <Form animateForm={show.form} ref={refForm} name="contact-form">
                 {formErrors.name && <p>{formErrors.name}</p>}
-                <label for="name">First Name</label>
+                <label htmlFor="name">First Name</label>
                 <input type="text" value={values.name} name="name" onChange={handleChange} placeholder="First Name" id="name"></input>
                 {formErrors.lastName && <p>{formErrors.lastName}</p>}
-                <label for="lastname">Last Name</label>
+                <label htmlFor="lastname">Last Name</label>
                 <input type="text" value={values.lastName} name="lastName" onChange={handleChange} placeholder="Last Name" id="lastname"></input>
                 {formErrors.email && <p>{formErrors.email}</p>}
-                <label for="email">Email</label>
+                <label htmlFor="email">Email</label>
                 <input type="text" value={values.email} name="email" onChange={handleChange} placeholder="E-mail" id="email"></input>
                 {formErrors.textArea && <p>{formErrors.textArea}</p>}
-                <label for="message">Message</label>
+                <label htmlFor="message">Message</label>
                 <textarea type="textarea" styler="resize:none" value={values.textArea} name="textArea" onChange={handleChange} placeholder="Message..." id="message"></textarea>
                 {paragraph}
                 <button type="submit" onClick={handleSubmit}>Submit</button>

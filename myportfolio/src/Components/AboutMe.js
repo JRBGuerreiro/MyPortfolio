@@ -211,7 +211,7 @@ const AboutMe = () => {
     )
 
     return(
-        <section className="aboutMeSection">
+        <section className="aboutMeSection" id="aboutme">
             <DivTitleWrapper animate={show.itemOne} ref={ref}>
                 <H1 className="aboutMeTitle" opacityAnim={show.itemTwo} ref={refTwo}>About Me</H1>
             </DivTitleWrapper>
