@@ -1354,4 +1354,18 @@ html, body {
             transform: scale(1, 1) translateY(0);
   }
 }
+
+@media (max-width: 767px) {
+  .arrowWrapper {
+    bottom: 53px;
+    right: 45px;
+  }
+  .arrowWrapper p {
+    font-size: 11pt;
+  }
+  .arrowTop {
+    height: 40px;
+    width: 40px;
+  }
+}
 /*# sourceMappingURL=style.css.map */

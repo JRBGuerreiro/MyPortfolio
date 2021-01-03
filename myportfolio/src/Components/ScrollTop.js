@@ -10,10 +10,21 @@ const ScrollTop = () => {
             var scrollHeight = document.body.scrollHeight
             var currentPosition = document.documentElement.scrollTop
             var offset = scrollHeight - currentPosition
-            if (!showArrow && offset < 1800){
-                setShowArrow(true)
-            } else if (showArrow && offset >= 1800){
-                setShowArrow(false)
+            var deviceScreenWidth = window.screen.width
+
+            ///mobile devices
+            if(deviceScreenWidth < 767) {
+                if (!showArrow && offset < 1000){
+                    setShowArrow(true)
+                } else if (showArrow && offset >= 1000){
+                    setShowArrow(false)
+                }
+            } else {
+                if (!showArrow && offset < 1800){
+                    setShowArrow(true)
+                } else if (showArrow && offset >= 1800){
+                    setShowArrow(false)
+                }
             }
         }
 
