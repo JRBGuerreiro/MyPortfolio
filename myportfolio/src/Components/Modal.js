@@ -26,7 +26,7 @@ export default function Modal(props) {
     const data = props.data
     
     return (
-        <Animation className="modalWrapper" animate={props.show} divOpacity={props.show}>  
+        <Animation className="modalWrapper" animate={props.show} divOpacity={props.show}>
         {props.data ? 
             <div className="modal" id="modal">
             <div className="modalHeaderWrapper">

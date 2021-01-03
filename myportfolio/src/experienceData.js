@@ -3,13 +3,15 @@ const experienceData = [
         id: "1",
         imageUrl: "../images/apple.svg",
         description: "Bet365 Native iOS app",
-        title: "Bet365 Native iOS app"
+        title: "Bet365 Native iOS app",
+        underConstruction: true
     },
     {
         id: "2",
         imageUrl: "../images/web.svg",
         description: "../images/bet365office.png",
-        title: "Some title for now"
+        title: "Some title for now",
+        underConstruction: true
     },
     {
         id: "3",
@@ -21,19 +23,22 @@ const experienceData = [
         image3Carrousel: "../images/2021-bentley-bentayga.jpg",
         logo: "../images/bentleyLogo.svg",
         technologiesUsed: ["../images/javascript.svg", "../images/sketch.svg"],
+        underConstruction: false
 
     },
     {
         id: "4",
         imageUrl: "../images/weather.svg",
         description: "some text for now",
-        title: "Some title for now"
+        title: "Some title for now",
+        underConstruction: true
     },
     {
         id: "5",
         imageUrl: "../images/cart.svg",
         description: "some text for now",
-        title: "Some title for now"
+        title: "Some title for now",
+        underConstruction: true
     },
 ]
 export default experienceData
