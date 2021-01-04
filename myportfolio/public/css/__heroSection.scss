@@ -132,6 +132,7 @@ $primaryTextColor: #ffffff;
             height: 24px;
             position: absolute;
             left: calc(50% - 12px);
+            top: calc(50% - 12px);
             animation: rotation 0.4s forwards;
             animation-delay: 0.3s;
             z-index: 10;

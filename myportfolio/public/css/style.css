@@ -241,6 +241,7 @@ footer {
     height: 24px;
     position: absolute;
     left: calc(50% - 12px);
+    top: calc(50% - 12px);
     -webkit-animation: rotation 0.4s forwards;
             animation: rotation 0.4s forwards;
     -webkit-animation-delay: 0.3s;
@@ -1389,7 +1390,7 @@ button:hover {
   }
   .navmenu {
     left: -100vw;
-    position: relative;
+    position: fixed;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1409,7 +1410,7 @@ button:hover {
     padding: 0;
   }
   .navMenuActive {
-    position: relative;
+    position: fixed;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
