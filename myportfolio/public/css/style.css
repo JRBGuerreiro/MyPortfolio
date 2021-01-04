@@ -1029,7 +1029,6 @@ footer {
   }
   .modalHeaderWrapper h2 {
     padding: 0 15px 0 15px;
-    margin-bottom: 30px;
   }
   .modalRightFlex {
     width: 100%;
@@ -1414,8 +1413,8 @@ button:hover {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 300px;
-    height: 500px;
+    width: 200px;
+    height: 450px;
     background-color: #3b4e6b;
     z-index: 1;
     left: 0;
