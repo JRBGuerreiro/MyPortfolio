@@ -32,7 +32,7 @@ function HeroSection() {
            
             <div className="heroHeaderWrapper">
                 <h1 className="initialGreeting">Hello and welcome to my portfolio</h1>
-                <h2 className="initialGreetingName">My name is Jorge Guerreiro</h2>
+                <h2 className="initialGreetingName">My name is <span>Jorge Guerreiro</span></h2>
                 <button onClick={scrollPage} className="initialButton">Get to know me<span/></button>
             </div>
         </section>

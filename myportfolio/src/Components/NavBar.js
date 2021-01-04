@@ -15,17 +15,13 @@ const NavBar = () => {
     return(
         <>
             <div className="navbar">
-                <HashLink to="#" className="menuBars">
-                    <FaIcons.FaBars onClick={showSidebar}/>
-                </HashLink>
+                    <FaIcons.FaBars className="bars" onClick={showSidebar}/>
             </div>
             <nav className={sideBar ? "navMenuActive" : "navmenu"}>
+                <div className="menuCross">
+                    <AiIcons.AiOutlineClose onClick={showSidebar} className="cross"/>
+                </div>
                 <ul className="navMenuItems">
-                    <li className="navbarToggle">
-                        <HashLink to="#" className="menuBars">
-                            <AiIcons.AiOutlineClose/>
-                        </HashLink>
-                    </li>
                     {NavBarData.map((item, index) => {
                         return(
                             <li key={index}>
