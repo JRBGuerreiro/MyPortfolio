@@ -4,6 +4,10 @@ export const NavBarData = [
         path: "/#aboutme"
     },
     {
+        title: "Passions",
+        path: "/#passions"
+    },
+    {
         title: "Projects",
         path: "/#projects"
     },
