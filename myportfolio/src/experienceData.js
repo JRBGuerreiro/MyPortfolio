@@ -14,7 +14,7 @@ const experienceData = [
     {
         id: "2",
         imageUrl: "../images/web.svg",
-        description: "Enrolled the team when responsive website started being developed. Tasked with updating site search functionality and responsiveness whilst helping other members of the team with different sections of the website. First professional project I took part.",
+        description: "I enrolled the team when responsive website started being developed. Tasked with updating site search functionality and responsiveness whilst helping other members of the team with different sections of the website. It was first professional project I took part.",
         title: "Bet365 Responsive Website",
         image1Carrousel: "../images/bet365website3.png",
         image2Carrousel: "../images/bet365website2.png",

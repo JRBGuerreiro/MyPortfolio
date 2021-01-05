@@ -242,11 +242,11 @@ const AboutMe = () => {
                         <img src= "images/ScubaDiving.jpg" alt="scubadiving" />    
                     </ImageWrapper >    
                     <ImageWrapper2 animateSlideInRightImg2={show.img1} ref={refImg1} className="passionsImgWrapper">
-                        <h2>Wildlife Nature</h2>
+                        <h2>Wildlife</h2>
                         <img src= "images/NatureWildlife.jpg" alt="elephant" /> 
                     </ImageWrapper2>    
                     <ImageWrapper3 ref={refImg2} animateSlideInLeftImg3={show.img2} className="passionsImgWrapper">
-                        <h2>Travelling Discovering</h2>
+                        <h2>Travelling</h2>
                         <img src= "images/TravellingDiscovering.jpg" alt="sightseeing" />    
                     </ImageWrapper3>    
                     <ImageWrapper4 ref={refImg3} animateSlideInRightImg4={show.img3} className="passionsImgWrapper">

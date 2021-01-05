@@ -21,6 +21,9 @@ export default function Modal(props) {
 
     const closeModal = () => {
         props.setShow()
+        //enable scrolling
+        document.body.style.overflowY = "visible"
+        document.documentElement.style.overflowY = "visible"
     }
 
     const data = props.data

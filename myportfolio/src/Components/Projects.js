@@ -7,6 +7,9 @@ function Projects(props) {
     function handleShow(cardData) {
         handleData(cardData)
         props.setShow(true)
+        //disable body scrolling
+        document.body.style.overflowY = "hidden"
+        document.documentElement.style.overflowY = "hidden"
     }
 
     const handleData = (data) => props.setData([data])
