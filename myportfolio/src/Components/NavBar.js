@@ -25,7 +25,7 @@ const NavBar = () => {
                     {NavBarData.map((item, index) => {
                         return(
                             <li key={index}>
-                                <HashLink onClick={showSidebar} to={item.path} smooth>
+                                <HashLink onClick={showSidebar} to={item.path} smooth style={{WebkitOverflowScrolling:'touch'}}>
                                     <span>{item.title}</span>
                                 </HashLink>
                             </li>
