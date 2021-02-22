@@ -23,6 +23,10 @@ footer{
         cursor: pointer;
     }
 
+    a {
+        @include flexCenterRow;
+    }
+
     .iconContainer::after {
         content: '';
         position: absolute;
@@ -41,7 +45,7 @@ footer{
         height: 100%;
     }
 
-    .iconContainer > img {
+    .iconContainer > a {
         z-index: 10;
     }
 }

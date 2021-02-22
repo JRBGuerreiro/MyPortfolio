@@ -130,7 +130,7 @@ const Passions = () => {
                 <ImageWrapper ref={refImg} animateSlideInLeftImg={show.img} className="passionsImgWrapper">
                     <h2>Scuba Diving</h2>
                     <img src= "images/ScubaDiving.jpg" alt="scubadiving" />    
-                </ImageWrapper >    
+                </ImageWrapper>    
                 <ImageWrapper2 animateSlideInRightImg2={show.img1} ref={refImg1} className="passionsImgWrapper">
                     <h2>Wildlife</h2>
                     <img src= "images/NatureWildlife.jpg" alt="elephant" /> 

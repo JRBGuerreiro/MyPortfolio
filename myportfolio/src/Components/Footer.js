@@ -5,16 +5,16 @@ function Footer() {
         <footer>
             <div className="flexIconsContainer">
                 <div className="iconContainer" id="iconInsta">
-                    <img src="images/instaIcon.svg" alt="instagram"/>                
+                    <a href="https://www.instagram.com/crcguerreiro/"><img src="images/instaIcon.svg" alt="instagram"/></a>                
                 </div>
                 <div className="iconContainer" id="iconFb">
-                    <img src="images/linkedinIcon.svg" alt="linkedin"/> 
+                    <a href="https://www.linkedin.com/in/jorge-guerreiro-bb0033a8/"><img src="images/linkedinIcon.svg" alt="linkedin"/></a>
                 </div>
                 <div className="iconContainer" id="iconLdn">
-                    <img src="images/facebookIcon.svg" alt="facebook"/> 
+                    <a href="https://www.facebook.com/jorge.guerreiro.3139/"><img src="images/facebookIcon.svg" alt="facebook"/></a>
                 </div>
                 <div className="iconContainer" id="iconGit">
-                    <img src="images/gitIcon.svg" alt="github"/> 
+                    <a href="https://github.com/JRBGuerreiro"><img src="images/gitIcon.svg" alt="github"/></a>
                 </div>
             </div>
 
