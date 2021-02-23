@@ -126,9 +126,9 @@ const AboutMe = () => {
                     <h2>Who am I?</h2>
                     <p>Hi, my name is Jorge and I'm a FrontEnd Software Developer
                        
-                        I currently work for Bet365 in Stoke, United Kingdom
+                        I currently work for Bet365 in Stoke, United Kingdom.
                         
-                        I am passionated about creating seamless user experience
+                        I am passionated about creating seamless user experience.
                        
                         I love creating dynamic animations and CSS effects to engage users.
                     </p>
